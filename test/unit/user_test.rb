@@ -15,7 +15,7 @@ class UserTest < ActiveSupport::TestCase
     user = Factory.build :user, :username => ''
     assert user.invalid?
 
-    %w/&*)@user tes!@@k AScñé/.each do |invalid_username|
+    %w/&*)@user tes!@@k ASc&#))/.each do |invalid_username|
       user.username = invalid_username
       assert user.invalid?
     end

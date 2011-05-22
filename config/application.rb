@@ -45,4 +45,4 @@ module Clover
   end
 end
 
-require 'app/exceptions/clover'
+require File.join Rails.root, 'app', 'exceptions', 'clover'
