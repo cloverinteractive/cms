@@ -12,13 +12,10 @@ __A dead simple content management system for Rails 3.__
 
 To install and run for development simply download and use rake as follows:
 
-```
-  git clone git://github.com/cloverinteractive/clovercms.git # clone the project
-  cd clovercms # go into the project directory
-  bundle install # install the gems
-  rake db:migrate db:seed # create and populate the development database
-  rails s # start the rails server
-```
+0. `git clone git://github.com/cloverinteractive/clovercms.git`
+1. `cd clovercms`
+2. `bundle install`
+3. `rake db:migrate db:seed`
 
 ## Running the tests
 
@@ -27,3 +24,12 @@ Simply run `rake test`
 ## Check code metrics
 
 To run all the code metrics, simply run `rake metrics:all`
+
+## Contribute
+
+Feel free to submit a pull request, and add your self to the contributors list in this README file.
+
+## Contributors
+
+* [Enrique Vidal](http://github.com/EnriqueVidal) - Creator, ruby developer
+* [Adan Alvarado](http://github.com/aalvarado) - Designer of the Open Source Dashboard theme and front-end developer
