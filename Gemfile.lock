@@ -166,13 +166,17 @@ PLATFORMS
 
 DEPENDENCIES
   acl9
+  activerecord-jdbc-adapter
   acts-as-taggable-on
   client_side_validations (= 3.0.2)
   compass (>= 0.10.6)
   devise
   factory_girl_rails
   haml-rails
+  jdbc-mysql
+  jdbc-sqlite3
   jquery-rails
+  jruby-openssl
   kaminari
   metric_fu
   mime-types
@@ -182,4 +186,5 @@ DEPENDENCIES
   rails (= 3.0.7)
   sqlite3-ruby
   tabs_on_rails
+  trinidad
   turn

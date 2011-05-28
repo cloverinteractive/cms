@@ -17,17 +17,32 @@ group :development do
   gem 'metric_fu', :require => false
 end
 
-group :test, :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
-
 group :test do
   gem 'factory_girl_rails'
   gem 'mocha', :require => false
   gem 'turn'
 end
 
-group :production do
-  gem 'mysql2'
+platforms :ruby do
+  group :test, :development do
+    gem 'sqlite3-ruby', :require => 'sqlite3'
+  end
+
+  group :production do
+    gem 'mysql2'
+  end
 end
 
+platforms :jruby do
+  gem 'activerecord-jdbc-adapter'
+  gem 'jruby-openssl'
+  gem 'trinidad'
+
+  group :test, :development do
+    gem 'jdbc-sqlite3'
+  end
+
+  group :production do
+    gem 'jdbc-mysql', :require => false
+  end
+end

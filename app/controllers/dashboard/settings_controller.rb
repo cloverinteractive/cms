@@ -1,4 +1,6 @@
 class Dashboard::SettingsController < ApplicationController
+  before_filter :set_setting, :only => [ :edit, :update, :destroy ]
+
   set_tab :list_settings, :only => :index
   set_tab :new_setting,   :only => :new
 
@@ -11,7 +13,6 @@ class Dashboard::SettingsController < ApplicationController
   end
 
   def edit
-    @setting = Setting.find params[:id]
     @themes = get_themes if @setting.name == 'theme'
   end
 
@@ -22,25 +23,22 @@ class Dashboard::SettingsController < ApplicationController
       flash[:success] = t 'messages.created_successfully'
       redirect_to dashboard_settings_path
     else
-      render :action => :new
+      render :new
     end
   end
 
   def update
-    @setting = Setting.find params[:id]
     params[:setting] = params[:setting].except(:name) if !@setting.destroyable?
 
     if @setting.update_attributes params[:setting]
       flash[:success] = t 'messages.updated_successfully'
       redirect_to dashboard_settings_path
     else
-      render :action => :new
+      render :new
     end
   end
 
   def destroy
-    @setting = Setting.find params[:id]
-
     if @setting.delete
       flash[:success] = t 'messages.deleted_successfully'
       redirect_to dashboard_settings_path
@@ -57,5 +55,9 @@ class Dashboard::SettingsController < ApplicationController
     Dir.new(themes_path).select do |dir|
       dir =~ /^[a-z0-9_-]+$/i && File.directory?( File.join themes_path, dir )
     end
+  end
+
+  def set_setting
+    @setting ||= Setting.find params[:id]
   end
 end

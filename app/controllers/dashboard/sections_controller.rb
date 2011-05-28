@@ -1,4 +1,6 @@
 class Dashboard::SectionsController < ApplicationController
+  before_filter :set_section, :only => [ :edit, :update, :destroy ]
+
   set_tab :list_sections, :only => :index
   set_tab :new_section,   :only => :new
 
@@ -21,11 +23,6 @@ class Dashboard::SectionsController < ApplicationController
     @section = Section.new
   end
 
-  # GET /sections/1/edit
-  def edit
-    @section = Section.find params[:id]
-  end
-
   # POST /sections
   def create
     @section = Section.new params[:section]
@@ -34,27 +31,28 @@ class Dashboard::SectionsController < ApplicationController
       flash[:success] = t 'messages.created_successfully'
       redirect_to dashboard_sections_path
     else
-      render :action => "new"
+      render :new
     end
   end
 
   # PUT /sections/1
   def update
-    @section = Section.find params[:id]
-
     if @section.update_attributes params[:section]
       flash[:success] = t 'messages.updated_successfully'
       redirect_to dashboard_sections_path
     else
-      render :action => "edit"
+      render :edit
     end
   end
 
   # DELETE /sections/1
   def destroy
-    @section = Section.find params[:id]
     @section.destroy
-
     redirect_to dashboard_sections_path
+  end
+
+  private
+  def set_section
+    @section ||= Section.find params[:id]
   end
 end

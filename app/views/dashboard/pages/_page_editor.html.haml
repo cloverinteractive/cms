@@ -1,7 +1,4 @@
 = form_for [:dashboard, page_editor.section, page_editor ], :validate => true  do |f|
-  - if page_editor.errors.any?
-    = render :partial => 'shared/error_explanation', :object => page_editor
-
   #page_content
     = f.hidden_field :keywords, :id => :final_keywords_list
     %label{ :for => :page_name }
