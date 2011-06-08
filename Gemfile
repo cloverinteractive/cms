@@ -12,6 +12,7 @@ gem "compass", ">= 0.10.6"
 gem 'tabs_on_rails'
 gem 'jquery-rails'
 gem 'acl9'
+gem 'capistrano'
 
 group :development do
   gem 'metric_fu', :require => false
