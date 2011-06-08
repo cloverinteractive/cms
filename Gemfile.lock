@@ -26,6 +26,7 @@ GEM
       activesupport (= 3.0.7)
       arel (~> 2.0.2)
       tzinfo (~> 0.3.23)
+    activerecord-jdbc-adapter (1.1.1)
     activeresource (3.0.7)
       activemodel (= 3.0.7)
       activesupport (= 3.0.7)
@@ -35,6 +36,8 @@ GEM
     arel (2.0.10)
     arrayfields (4.7.4)
     bcrypt-ruby (2.1.3)
+    bcrypt-ruby (2.1.3-java)
+    bouncy-castle-java (1.5.0146.1)
     builder (2.1.2)
     capistrano (2.5.19)
       highline
@@ -66,6 +69,9 @@ GEM
       factory_girl (~> 1.3)
       rails (>= 3.0.0)
     fattr (2.2.0)
+    ffi (1.0.9-java)
+    ffi-ncurses (0.3.3)
+      ffi (>= 0.6.3)
     flay (1.4.1)
       ruby_parser (~> 2.0)
       sexp_processor (~> 3.0)
@@ -83,9 +89,14 @@ GEM
     hoe (2.8.0)
       rake (>= 0.8.7)
     i18n (0.5.0)
+    jdbc-mysql (5.1.13)
+    jdbc-sqlite3 (3.6.14.2.056-java)
     jquery-rails (1.0.9)
       railties (~> 3.0)
       thor (~> 0.14)
+    jruby-openssl (0.7.4)
+      bouncy-castle-java
+    jruby-rack (1.0.9)
     json_pure (1.4.6)
     kaminari (0.10.4)
       rails (>= 3.0.0)
@@ -151,6 +162,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rcov (0.9.9)
+    rcov (0.9.9-java)
     reek (1.2.8)
       ruby2ruby (~> 1.2)
       ruby_parser (~> 2.0)
@@ -169,6 +181,10 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    trinidad (1.2.0)
+      jruby-rack (>= 1.0.9)
+      trinidad_jars (>= 1.0.1)
+    trinidad_jars (1.0.1)
     turn (0.8.1)
       ansi (>= 1.2.2)
     tzinfo (0.3.27)
@@ -176,6 +192,7 @@ GEM
       rack (>= 1.0.0)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
@@ -187,6 +204,7 @@ DEPENDENCIES
   compass (>= 0.10.6)
   devise
   factory_girl_rails
+  ffi-ncurses
   haml-rails
   jdbc-mysql
   jdbc-sqlite3

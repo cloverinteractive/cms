@@ -38,6 +38,7 @@ platforms :jruby do
   gem 'activerecord-jdbc-adapter'
   gem 'jruby-openssl'
   gem 'trinidad'
+  gem 'ffi-ncurses'
 
   group :test, :development do
     gem 'jdbc-sqlite3'
