@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.8'
 gem 'client_side_validations', '3.0.2'
 gem 'kaminari'
+gem 'sass'
 gem 'haml-rails'
 gem 'devise'
 gem 'paperclip'
