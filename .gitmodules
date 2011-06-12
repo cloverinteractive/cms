@@ -1,0 +1,3 @@
+[submodule "vendor/wymeditor"]
+	path = vendor/wymeditor
+	url = https://github.com/wymeditor/wymeditor.git

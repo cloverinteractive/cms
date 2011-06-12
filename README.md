@@ -17,6 +17,12 @@ To install and run for development simply download and use rake as follows:
 2. `bundle install`
 3. `rake db:migrate db:seed`
 
+This part is optional, it will compile and install wymeditor for page editing, you will need `make` for this.
+
+0. `git submodule init`
+1. `git submodule update`
+2. `rake wymeditor:compile`
+
 ## Running the tests
 
 Simply run `rake test`

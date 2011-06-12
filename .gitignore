@@ -10,6 +10,7 @@ public/stylesheets/*.css
 *~
 .DS_Store
 public/images/system
+public/javascripts/wymeditor/*
 public/system
 public/.htaccess
 *.bak
