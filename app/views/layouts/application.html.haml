@@ -3,7 +3,7 @@
   %head
     %title= content_for?(:title) ? yield(:title) : 'CloverInteractive'
     = stylesheet_link_tag 'application'
-    = javascript_include_tag 'jquery.min', 'rails', 'application', 'rails.validations'
+    = javascript_include_tag :defaults
     = yield :head
     = csrf_meta_tag
 
