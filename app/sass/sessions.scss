@@ -1,14 +1,12 @@
 @import "compass/css3/border-radius";
 
 html {
-  background-image:none;
-  background-color:#3e5469;
-
   body {
     font-size: 0.88em;
     font-family: arial, helvetica, clean, sans-serif;
     text-align:center;
     color: #FFF;
+    background-color:#3e5469;
 
     #wrapper {
       width:960px;

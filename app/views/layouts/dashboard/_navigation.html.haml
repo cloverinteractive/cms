@@ -1,0 +1,19 @@
+- content_for :head do
+  = stylesheet_link_tag 'themes/smoothness/jquery-ui', 'uploadify/uploadify'
+  = javascript_include_tag 'jquery-ui.min', 'wymeditor/jquery.wymeditor.min', 'uploadify/uploadify.min', 'uploadify/swfobject'
+  :javascript
+    $(function() {
+      $("textarea.wymeditor").wymeditor({
+        logoHtml: '',
+        skin: 'compact'
+      });
+    });
+
+- content_for :nav_wrap do
+  %ul#nav
+    %li#sections_menu_link=   link_to t('activerecord.models.section'), dashboard_sections_path
+    %li#pages_menu_link=      link_to t('activerecord.models.page'),    dashboard_pages_path
+    %li#settings_menu_link=   link_to t('activerecord.models.setting'), dashboard_settings_path
+    %li#users_menu_link=      link_to t('activerecord.models.user'),    dashboard_users_path
+    = yield :nav
+  = content_for?( :sub_nav ) ? yield( :sub_nav ) : render( "layouts/dashboard/nav/#{controller_name}" )

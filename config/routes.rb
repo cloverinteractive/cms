@@ -10,13 +10,12 @@ Clover::Application.routes.draw do
     resources :users,     :only   => [ :index, :destroy ]
     resources :assets,    :only   => [ :create, :destroy ]
     resources :settings,  :except => :show
-    resources :sections,  :except => :show  do
-      resources :pages,   :except => :show
-    end
+    resources :sections,  :except => :show
+    resources :pages,     :except => :show
   end
 
-  match ":section/:page",             :to => "pages#show", :as => :section_page,    :via => :get, :constraints => { :format => 'html' }
-  match ":section/:subsection/:page", :to => "pages#show", :as => :subsection_page, :via => :get, :constraints => { :format => 'html' }
+  match ":section/:page",             :to => "pages#show", :as => :section_page,    :via => :get
+  match ":section/:subsection/:page", :to => "pages#show", :as => :subsection_page, :via => :get
 
   root :to => "pages#home", :via => :get
 end

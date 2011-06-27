@@ -7,8 +7,8 @@ class PagesController < ApplicationController
   # GET /:section/:page
   # GET /:section/:subsection/:page
   def show
-    @page ||= subsection.pages.published.find_by_url_name params[:page] if subsection
-    @page ||=    section.pages.published.find_by_url_name params[:page] if section
+    @page   = subsection.pages.published.find_by_url_name( params[:page] ) if subsection
+    @page ||=    section.pages.published.find_by_url_name( params[:page] ) if section
 
     raise Clover::PageNotFoundError if @page.blank?
 

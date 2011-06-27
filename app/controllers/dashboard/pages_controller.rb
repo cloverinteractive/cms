@@ -1,5 +1,4 @@
 class Dashboard::PagesController < ApplicationController
-  before_filter :set_section
   before_filter :set_page, :only => [ :edit, :update, :destroy ]
 
   access_control do
@@ -11,22 +10,22 @@ class Dashboard::PagesController < ApplicationController
 
   # GET /pages
   def index
-    @pages = @section.pages.page params[:page]
+    @pages = Page.page params[:page]
   end
 
   # GET /pages/new
   def new
-    @page = @section.pages.new
+    @page = Page.new
   end
 
   # POST /pages
   def create
-    @page = @section.pages.new params[:page].except('keywords')
+    @page = Page.new params[:page].except('keywords')
     @page.keyword_list = params[:page][:keywords] if params[:page][:keywords].present?
 
     if @page.save
       flash[:success] = t 'messages.created_successfully'
-      redirect_to dashboard_section_pages_path(@section)
+      redirect_to dashboard_pages_path
     else
       render :new
     end
@@ -38,7 +37,7 @@ class Dashboard::PagesController < ApplicationController
 
     if @page.update_attributes params[:page].except('keywords')
       flash[:success] = t 'messages.updated_successfully'
-      redirect_to dashboard_section_pages_path(@section)
+      redirect_to dashboard_pages_path
     else
       render :edit
     end
@@ -47,15 +46,11 @@ class Dashboard::PagesController < ApplicationController
   # DELETE /pages/1
   def destroy
     @page.destroy
-    redirect_to dashboard_section_pages_path(@section)
+    redirect_to dashboard_pages_path
   end
 
   private
-  def set_section
-    @section ||= Section.find params[:section_id]
-  end
-
   def set_page
-    @page ||= set_section.pages.find params[:id]
+    @page ||= Page.find params[:id]
   end
 end

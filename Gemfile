@@ -14,6 +14,7 @@ gem 'tabs_on_rails'
 gem 'jquery-rails'
 gem 'acl9'
 gem 'capistrano'
+gem 'clovercms-dashboard', :require => 'dashboard'
 
 group :development do
   gem 'metric_fu', :require => false
@@ -22,6 +23,7 @@ end
 group :test do
   gem 'factory_girl_rails'
   gem 'mocha', :require => false
+  gem 'capybara'
   gem 'turn'
 end
 
