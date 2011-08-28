@@ -29,7 +29,7 @@ Simply run `rake test`
 
 ## Supported platforms
 
-We curently test in:
+We currently test in:
 
 * ruby 1.9.2
 * ruby 1.8.7
