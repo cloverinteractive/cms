@@ -5,6 +5,8 @@ class Setting < ActiveRecord::Base
   validates_format_of :name, :with => /^[a-z0-9_]+$/
   attr_accessible :name, :value, :description
 
+  attr_accessible :name, :value, :description, :destroyable
+
   def delete
     if destroyable?
       super

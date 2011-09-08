@@ -5,9 +5,11 @@ class Section < ActiveRecord::Base
   has_many    :subsections,   :class_name => "Section", :foreign_key => :main_section_id
   belongs_to  :main_section,  :class_name => "Section", :foreign_key => :main_section_id
 
-  before_validation       :set_url_name    
+  before_validation       :set_url_name
   validates_uniqueness_of :name, :url_name, :allow_blank => false
   validates_presence_of   :name
+
+  attr_accessible :name
 
   private
   def set_url_name

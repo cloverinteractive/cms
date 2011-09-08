@@ -11,6 +11,8 @@ class Page < ActiveRecord::Base
   validates_presence_of   :name, :content, :section
   validates_uniqueness_of :name, :url_name, :allow_blank? => false, :allow_nil? => false
 
+  attr_accessible :name, :content, :section
+
   scope :published, where(:published => true)
 
   def self.home_page
