@@ -20,6 +20,10 @@ group :development do
   gem 'metric_fu', :require => false
 end
 
+group :development, :test do
+  gem 'jasmine', "~> 1.1.0.rc4"
+end
+
 group :test do
   gem 'factory_girl_rails'
   gem 'mocha', :require => false
