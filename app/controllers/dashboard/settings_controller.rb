@@ -34,7 +34,7 @@ class Dashboard::SettingsController < ApplicationController
       flash[:success] = t 'messages.updated_successfully'
       redirect_to dashboard_settings_path
     else
-      render :new
+      render :edit
     end
   end
 

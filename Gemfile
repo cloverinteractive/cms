@@ -21,7 +21,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'jasmine', "~> 1.1.0.rc4"
+  gem 'jasmine',      "~> 1.1.0.rc4"
+  gem "rspec-rails",  "~> 2.6"
 end
 
 group :test do
@@ -29,6 +30,7 @@ group :test do
   gem 'mocha', :require => false
   gem 'capybara'
   gem 'turn'
+  gem "capybara"
 end
 
 platforms :ruby do

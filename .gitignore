@@ -6,6 +6,7 @@ doc/app
 db/*.sqlite3
 .sass-cache/
 public/stylesheets/*.css
+.rspec/
 *.swp
 *~
 .DS_Store
