@@ -2,7 +2,6 @@ script: "bundle exec rake db:create db:migrate test"
 rvm:
   - 1.8.7
   - 1.9.2
-  - jruby
   - ree
 notifications:
   recipients:
