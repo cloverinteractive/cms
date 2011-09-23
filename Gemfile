@@ -17,7 +17,10 @@ gem 'capistrano'
 gem 'clovercms-dashboard', :require => 'dashboard'
 
 group :development do
-  gem 'metric_fu', :require => false
+  gem 'metric_fu',    :require => false
+  gem 'fattr',        :require => false
+  gem 'arrayfields',  :require => false
+  gem 'map',          :require => false
 end
 
 group :development, :test do
@@ -27,10 +30,8 @@ end
 
 group :test do
   gem 'factory_girl_rails'
-  gem 'mocha', :require => false
   gem 'capybara'
-  gem 'turn'
-  gem "capybara"
+  gem 'mocha', :require => false
 end
 
 platforms :ruby do

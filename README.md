@@ -25,7 +25,7 @@ This part is optional, it will compile and install wymeditor for page editing, y
 
 ## Running the tests
 
-`rake test`
+`rake spec`
 
 ## Supported platforms
 
@@ -43,6 +43,8 @@ We take JRuby into consideration, and our Gemfile works nice with its platforms,
 1. `jruby -S bundle install`
 
 ## Check code metrics
+
+We use `metric_fu` for code metrics, that said `rcov` is known to fail when using ruby 1.9, at this moment metrics can only be generated in ruby 1.8.7.
 
 To run code metrics, `rake metrics:all`
 
