@@ -11,7 +11,7 @@ class Page < ActiveRecord::Base
   validates_presence_of   :name, :content, :section
   validates_uniqueness_of :name, :url_name, :allow_blank? => false, :allow_nil? => false
 
-  attr_accessible :name, :content, :section
+  attr_accessible :name, :content, :section, :home_page, :published, :section_id, :has_contact
 
   scope :published, where(:published => true)
 

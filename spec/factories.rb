@@ -3,11 +3,25 @@ FactoryGirl.define do
     "Record #{n}"
   end
 
+  sequence :email do |n|
+    "user#{n}@email.com"
+  end
+
+  factory :role do
+    name 'admin'
+  end
+
   factory :user do
     username  'user'
-    email     'user@email.com'
-    password  'somepassword'
-    password_confirmation 'somepassword'
+    email     { Factory.next :email }
+    password  'password'
+    password_confirmation 'password'
+  end
+
+  factory :admin, :parent => :user do
+    username  'admin'
+    email     'admin@email.com'
+    roles [ Factory.create( :role ) ]
   end
 
   factory :page do
@@ -19,11 +33,6 @@ FactoryGirl.define do
 
   factory :section do
     name  { Factory.next :name }
-  end
-
-  factory :article do
-    name    'First article'
-    content 'This is my first article'
   end
 
   factory :setting do

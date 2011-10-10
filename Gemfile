@@ -29,6 +29,9 @@ group :development, :test do
 end
 
 group :test do
+  gem 'cucumber-rails'
+  gem 'launchy'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'mocha', :require => false

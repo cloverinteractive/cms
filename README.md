@@ -1,3 +1,11 @@
+```
+              _                     _       _                      _   _
+  .-.-.   ___| | _____   _____ _ __(_)_ __ | |_ ___ _ __ __ _  ___| |_(_)_   _____
+ (_\|/_) / __| |/ _ \ \ / / _ \ '__| | '_ \| __/ _ \ '__/ _` |/ __| __| \ \ / / _ \
+ ( /|\ )| (__| | (_) \ V /  __/ |  | | | | | ||  __/ | | (_| | (__| |_| |\ V /  __/
+  '-'-'  \___|_|\___/ \_/ \___|_|  |_|_| |_|\__\___|_|  \__,_|\___|\__|_| \_/ \___|
+```
+
 # Clover CMS [![Build Status](http://travis-ci.org/cloverinteractive/clovercms.png)](http://travis-ci.org/cloverinteractive/clovercms)
 
 __A dead simple content management system for Rails 3.__

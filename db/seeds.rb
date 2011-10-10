@@ -1,11 +1,11 @@
 # We crate our default section and page to avoid CMS errors
 
-section = Section.create! :name => 'main'
-pages   = Page.create! :name => 'main page', :content => 'this is my main page', :section_id => section.id, :home_page => true, :published => true
+section = Section.create!( :name => 'main' )
+page    = section.pages.build( :name => 'main page', :content => 'this is my main page', :home_page => true, :published => true ).save!
 
 # We create and activate a default user
 
-user    = User.create! :username => 'admin', :password => 'administrator', :email => "admin@example.com"
+user = User.create! :username => 'admin', :password => 'administrator', :email => "admin@example.com"
 user.confirmed_at = Time.now
 user.save!
 
