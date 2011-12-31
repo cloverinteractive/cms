@@ -1,9 +1,14 @@
+GIT
+  remote: https://github.com/be9/acl9.git
+  revision: 59550d924cde06e40c42ab345b7d64e7310eada7
+  specs:
+    acl9 (0.12.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
     Saikuro (1.1.0)
     abstract (1.0.0)
-    acl9 (0.12.0)
     actionmailer (3.0.10)
       actionpack (= 3.0.10)
       mail (~> 2.2.19)
@@ -249,7 +254,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acl9
+  acl9!
   activerecord-jdbc-adapter
   acts-as-taggable-on
   arrayfields

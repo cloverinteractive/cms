@@ -12,7 +12,7 @@ gem 'mime-types', :require => 'mime/types'
 gem "compass", ">= 0.10.6"
 gem 'tabs_on_rails'
 gem 'jquery-rails'
-gem 'acl9'
+gem 'acl9', :git => 'https://github.com/be9/acl9.git'
 gem 'capistrano'
 gem 'clovercms-dashboard', :require => 'dashboard'
 
