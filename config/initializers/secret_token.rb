@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Clover::Application.config.secret_token = 'c8e351c0585e989664993def5b80c6469924fde5fc61f236bff2a7edfb63c6622b737e2b1d2b873e62aae88cec6429cf48b6c9fffc1736aaffea3651f4b33f14'
+Clover::Application.config.secret_token = '61652a38008a06eccbdefc6bd4dce27a3d8defb525909dd45b76ceeba98ea24b7b52cf32486319a8f510cc794d012ed4cd6ebc075650f4de024799202391614a'

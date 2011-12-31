@@ -1,5 +1,5 @@
 Clover::Application.configure do
-  # Settings specified here will take precedence over those in config/environment.rb
+  # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
@@ -46,5 +46,5 @@ Clover::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  config.action_mailer.default_url_options = { :host => 'www.cloverinteractive.com' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
