@@ -8,6 +8,10 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Clover
   class Application < Rails::Application
+    config.assets.enabled = true
+    #config.sass.load_paths << "#{Rails.root}/app/assets/stylesheets"
+    #config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -39,7 +43,7 @@ module Clover
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
-    config.generators do |g|
+    config.app_generators do |g|
       g.template_engine :haml
     end
   end

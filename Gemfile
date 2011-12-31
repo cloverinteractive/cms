@@ -1,20 +1,28 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
-gem 'client_side_validations', '3.0.2'
+gem 'rails', '~> 3.1.0'
+
+gem 'client_side_validations'
 gem 'kaminari'
-gem 'sass'
 gem 'haml-rails'
 gem 'devise'
 gem 'paperclip'
 gem 'acts-as-taggable-on'
-gem 'mime-types', :require => 'mime/types'
-gem "compass", ">= 0.10.6"
+gem 'compass'
 gem 'tabs_on_rails'
 gem 'jquery-rails'
-gem 'acl9', :git => 'https://github.com/be9/acl9.git'
-gem 'capistrano'
-gem 'clovercms-dashboard', :require => 'dashboard'
+
+gem 'acl9', :git => 'https://github.com/be9/acl9.git', :ref => 'dd461ff'
+
+gem 'clovercms-dashboard',  :require => 'dashboard'
+gem 'mime-types',           :require => 'mime/types'
+
+
+group :assets do
+  gem 'sass-rails',   '~> 3.1.0'
+  gem 'coffee-rails', '~> 3.1.0'
+  gem 'uglifier'
+end
 
 group :development do
   gem 'metric_fu',    :require => false
@@ -24,7 +32,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'jasmine',      "~> 1.1.0.rc4"
+  gem 'jasmine'
   gem "rspec-rails",  "~> 2.6"
 end
 
