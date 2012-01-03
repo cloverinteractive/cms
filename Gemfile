@@ -8,7 +8,6 @@ gem 'haml-rails'
 gem 'devise'
 gem 'paperclip'
 gem 'acts-as-taggable-on'
-gem 'compass'
 gem 'tabs_on_rails'
 gem 'jquery-rails'
 
@@ -20,6 +19,7 @@ gem 'mime-types',           :require => 'mime/types'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.0'
+  gem 'compass',      '~> 0.12.alpha'
   gem 'coffee-rails', '~> 3.1.0'
   gem 'uglifier'
 end

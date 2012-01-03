@@ -83,7 +83,7 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     colored (1.2)
-    compass (0.11.6)
+    compass (0.12.alpha.0)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
@@ -294,7 +294,7 @@ DEPENDENCIES
   client_side_validations
   clovercms-dashboard
   coffee-rails (~> 3.1.0)
-  compass
+  compass (~> 0.12.alpha)
   cucumber-rails
   database_cleaner
   devise
