@@ -10,7 +10,7 @@ gem 'acts-as-taggable-on'
 gem 'tabs_on_rails'
 gem 'jquery-rails'
 gem 'simple_form'
-
+gem 'single_test'
 gem 'mime-types', :require => 'mime/types'
 
 group :assets do
@@ -19,7 +19,6 @@ group :assets do
   gem 'uglifier',     '>= 1.0.3'
   gem 'compass-rails'
   gem 'fancybox-rails'
-  gem 'wymeditor-rails'
  end
 
 group :development, :test do
@@ -28,7 +27,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'launchy'
   gem 'database_cleaner'
   gem 'factory_girl_rails'

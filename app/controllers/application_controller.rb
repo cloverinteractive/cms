@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  extend ActiveSupport::Memoizable
   before_filter :set_locale, :authenticate_user!
   layout :guess_layout
 
@@ -12,7 +11,7 @@ class ApplicationController < ActionController::Base
   helper_method :site
 
   def site
-    Setting.get_site_settings
+    @site ||= Setting.get_site_settings
   end
 
   private
@@ -68,6 +67,4 @@ class ApplicationController < ActionController::Base
     render 'public/404.html', :status => :not_found, :layout => false
     return false
   end
-
-  memoize :site
 end

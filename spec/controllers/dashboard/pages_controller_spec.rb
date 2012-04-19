@@ -7,9 +7,9 @@ describe Dashboard::PagesController do
     @page     = Factory.create :page, :section => @section
   end
 
-  describe "when user is admin" do
+  describe "when user is logged  in" do
     before :each do
-      login_as @user, :admin
+      login_as @user
     end
 
     describe "GET index" do
@@ -68,7 +68,7 @@ describe Dashboard::PagesController do
 
     describe "POST create" do
       before :each do
-        @page_attr = Factory.attributes_for :page, :name => 'new page', :section => @section
+        @page_attr = Factory.attributes_for :page, :name => 'new page', :section_id => @section.id
         post :create, :page => @page_attr
       end
 

@@ -1,6 +1,6 @@
 = content_for :head do
   :javascript
     $(function() {
-      $("#{ selected_tab }_menu_link").addClass('active');
+      $("##{ selected_tab }_menu_link").addClass('active');
       #{ yield :javascript }
     });
