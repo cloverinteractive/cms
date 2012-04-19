@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
                                           :thumb          => "50x50#"
                                         }
 
-  acts_as_authorization_subject :association_name => :roles
-
   validates_format_of :username, :with => /^([a-z0-9\-_.]{2,31})$/i
 
   attr_accessor :login

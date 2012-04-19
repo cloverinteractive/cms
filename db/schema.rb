@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110421033234) do
+ActiveRecord::Schema.define(:version => 20110209072651) do
 
   create_table "assets", :force => true do |t|
     t.string  "description"
@@ -32,40 +32,18 @@ ActiveRecord::Schema.define(:version => 20110421033234) do
     t.boolean  "published",   :default => false
     t.boolean  "home_page",   :default => false
     t.boolean  "has_contact", :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   add_index "pages", ["section_id"], :name => "index_pages_on_section_id"
-
-  create_table "roles", :force => true do |t|
-    t.string   "name",              :limit => 40
-    t.string   "authorizable_type", :limit => 40
-    t.integer  "authorizable_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "roles", ["authorizable_id"], :name => "index_roles_on_authorizable_id"
-  add_index "roles", ["authorizable_type"], :name => "index_roles_on_authorizable_type"
-  add_index "roles", ["name", "authorizable_id", "authorizable_type"], :name => "index_roles_on_name_and_authorizable_id_and_authorizable_type", :unique => true
-  add_index "roles", ["name"], :name => "index_roles_on_name"
-
-  create_table "roles_users", :id => false, :force => true do |t|
-    t.integer "user_id"
-    t.integer "role_id"
-  end
-
-  add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
-  add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id", :unique => true
-  add_index "roles_users", ["user_id"], :name => "index_roles_users_on_user_id"
 
   create_table "sections", :force => true do |t|
     t.string   "name"
     t.integer  "main_section_id"
     t.string   "url_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   add_index "sections", ["main_section_id"], :name => "index_sections_on_main_section_id"
@@ -75,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20110421033234) do
     t.text     "value",                         :null => false
     t.string   "description"
     t.boolean  "destroyable", :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "taggings", :force => true do |t|
@@ -116,8 +94,8 @@ ActiveRecord::Schema.define(:version => 20110421033234) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "authentication_token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                          :null => false
+    t.datetime "updated_at",                                          :null => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

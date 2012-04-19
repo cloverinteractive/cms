@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound,     :with => :record_missing
   rescue_from Clover::PageNotFoundError,        :with => :page_not_found
   rescue_from Clover::UnauthorizedAccessError,  :with => :unauthorized_access
-  rescue_from Acl9::AccessDenied,               :with => :unauthorized_access
 
   protect_from_forgery
 

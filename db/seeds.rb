@@ -9,8 +9,6 @@ user = User.create! :username => 'admin', :password => 'administrator', :email =
 user.confirmed_at = Time.now
 user.save!
 
-user.has_role! :admin
-
 # We create the default non-destroyable site settings
 
 default_settings =  [

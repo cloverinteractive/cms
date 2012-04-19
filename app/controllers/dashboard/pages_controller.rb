@@ -1,10 +1,6 @@
 class Dashboard::PagesController < ApplicationController
   before_filter :set_page, :only => [ :edit, :update, :destroy ]
 
-  access_control do
-    allow :admin
-  end
-
   set_tab :list_pages, :only => :index
   set_tab :new_page, :only => :new
 

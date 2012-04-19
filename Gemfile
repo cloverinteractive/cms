@@ -1,8 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1.0'
+gem 'rails', '~> 3.2.2'
 
-gem 'client_side_validations'
 gem 'kaminari'
 gem 'haml-rails'
 gem 'devise'
@@ -10,26 +9,17 @@ gem 'paperclip'
 gem 'acts-as-taggable-on'
 gem 'tabs_on_rails'
 gem 'jquery-rails'
+gem 'simple_form'
 
-gem 'acl9', :git => 'https://github.com/be9/acl9.git', :ref => 'dd461ff'
-
-gem 'clovercms-dashboard',  :require => 'dashboard'
-gem 'mime-types',           :require => 'mime/types'
-
+gem 'mime-types', :require => 'mime/types'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.1.0'
-  gem 'compass',      '~> 0.12.alpha'
-  gem 'coffee-rails', '~> 3.1.0'
-  gem 'uglifier'
-end
-
-group :development do
-  gem 'metric_fu',    :require => false
-  gem 'fattr',        :require => false
-  gem 'arrayfields',  :require => false
-  gem 'map',          :require => false
-end
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier',     '>= 1.0.3'
+  gem 'compass-rails'
+  gem 'fancybox-rails'
+ end
 
 group :development, :test do
   gem 'jasmine'
@@ -47,7 +37,7 @@ end
 
 platforms :ruby do
   group :test, :development do
-    gem 'sqlite3-ruby', :require => 'sqlite3'
+    gem 'sqlite3'
   end
 
   group :production do

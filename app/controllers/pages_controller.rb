@@ -1,8 +1,5 @@
 class PagesController < ApplicationController
   skip_before_filter :authenticate_user!
-  access_control do
-    allow all
-  end
 
   # GET /:section/:page
   # GET /:section/:subsection/:page
