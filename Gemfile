@@ -19,6 +19,7 @@ group :assets do
   gem 'uglifier',     '>= 1.0.3'
   gem 'compass-rails'
   gem 'fancybox-rails'
+  gem 'wymeditor-rails'
  end
 
 group :development, :test do

@@ -45,7 +45,8 @@ module Clover
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.assets.precompile += %w(clover.css tjruby.css dashboard.css simple_blog.css sessions.css)
+    config.assets.precompile += %w(clover.css tjruby.css dashboard.css simple_blog.css sessions.css jquery-ui.css)
+    config.assets.precompile += %w(wymeditor/jquery.wymeditor.min.js uploadify/uploadify.js uploadify/swfobject.js)
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
