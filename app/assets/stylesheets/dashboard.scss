@@ -5,7 +5,7 @@ html {
   height: 100%;
 
   body {
-    background: #F2F2F2 url('/images/dashboard/html-bg.jpg') repeat-x left top;
+    background: #F2F2F2 url('/assets/dashboard/html-bg.jpg') repeat-x left top;
     height: 100%;
     font-family: helvetica,arial,freesans,clean,sans-serif;
     font-size: 13.34px;
@@ -73,7 +73,7 @@ html {
       }
 
       #logo {
-        background: transparent url('/images/dashboard/logo.png') no-repeat 0px 4px;
+        background: transparent url('/assets/dashboard/logo.png') no-repeat 0px 4px;
         font-family: "Cetury Gothic", sans-serif, arial;
         font-size: 15px;
         line-height: 14px;
@@ -108,7 +108,7 @@ html {
           }
 
           a:hover, li.active a {
-            background: #0057A9 url('/images/dashboard/nav-li-bg.png') repeat-x left top;
+            background: #0057A9 url('/assets/dashboard/nav-li-bg.png') repeat-x left top;
             padding: 10px 14px 9px 14px;
             @include border-radius(10px 10px 0px 0px);
           }
@@ -215,7 +215,7 @@ html {
             }
 
             h2.title {
-              background: #ededed url('/images/dashboard/module-top.png') repeat-x left top;
+              background: #ededed url('/assets/dashboard/module-top.png') repeat-x left top;
               padding: 10px;
               display: block;
               border-bottom: 1px solid #CCC;
@@ -300,25 +300,25 @@ label {
 
   .error{
     border:1px solid #ff9b9b;
-    background:#ffd3d3 url('/images/dashboard/error.png') no-repeat 10px 7px;
+    background:#ffd3d3 url('/assets/dashboard/error.png') no-repeat 10px 7px;
     color:#de1414;
   }
 
   .info {
     border:1px solid #5abef3;
-    background:#d9f4ff url('/images/dashboard/info.png') no-repeat 10px 7px;
+    background:#d9f4ff url('/assets/dashboard/info.png') no-repeat 10px 7px;
     color:#0069cb;
   }
 
   .success {
     border:1px solid #78ce4d;
-    background:#e8ffe2 url('/images/dashboard/success.png') no-repeat 10px 7px;
+    background:#e8ffe2 url('/assets/dashboard/success.png') no-repeat 10px 7px;
     color:#007e1b;
   }
 
   .warning {
     border: 1px solid #c4bc16;
-    background: #fffed7 url('/images/dashboard/warning.png') no-repeat 10px 7px;
+    background: #fffed7 url('/assets/dashboard/warning.png') no-repeat 10px 7px;
     color: #6e6000;
   }
 
@@ -366,23 +366,23 @@ label {
     }
 
     .icon.edit {
-      background: url('/images/dashboard/icons/pencil.png') no-repeat;
+      background: url('/assets/dashboard/icons/pencil.png') no-repeat;
     }
 
     .icon.delete {
-      background: url('/images/dashboard/icons/delete.png') no-repeat;
+      background: url('/assets/dashboard/icons/delete.png') no-repeat;
     }
 
     .icon.add {
-      background: url('/images/dashboard/icons/add.png') no-repeat;
+      background: url('/assets/dashboard/icons/add.png') no-repeat;
     }
 
     .icon.accept {
-      background: url('/images/dashboard/icons/accept.png') no-repeat;
+      background: url('/assets/dashboard/icons/accept.png') no-repeat;
     }
 
     .icon.disk {
-      background: url('/images/dashboard/icons/disk.png') no-repeat;
+      background: url('/assets/dashboard/icons/disk.png') no-repeat;
     }
   }
 }

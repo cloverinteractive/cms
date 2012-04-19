@@ -9,25 +9,25 @@
 
   .error{
     border:1px solid #ff9b9b;
-    background:#ffd3d3 url('/images/system-error-alt.png') no-repeat 10px 7px;
+    background:#ffd3d3 url('/assets/system-error-alt.png') no-repeat 10px 7px;
     color:#de1414;
   }
 
   .info {
     border:1px solid #5abef3;
-    background:#d9f4ff url('/images/system-info-alt.png') no-repeat 10px 7px;
+    background:#d9f4ff url('/assets/system-info-alt.png') no-repeat 10px 7px;
     color:#0069cb;
   }
 
   .success {
     border:1px solid #78ce4d;
-    background:#e8ffe2 url('/images/success.png') no-repeat 10px 7px;
+    background:#e8ffe2 url('/assets/success.png') no-repeat 10px 7px;
     color:#007e1b;
   }
 
   .warning {
     border: 1px solid #c4bc16;
-    background: #fffed7 url('/images/warning.png') no-repeat 10px 7px;
+    background: #fffed7 url('/assets/warning.png') no-repeat 10px 7px;
     color: #6e6000;
   }
 
@@ -74,19 +74,19 @@
     }
 
     .icon.edit {
-      background: url('/images/icons/pencil.png') no-repeat;
+      background: url('/assets/icons/pencil.png') no-repeat;
     }
 
     .icon.delete {
-      background: url('/images/icons/delete.png') no-repeat;
+      background: url('/assets/icons/delete.png') no-repeat;
     }
 
     .icon.user_edit {
-      background: url('/images/icons/user_edit.png') no-repeat;
+      background: url('/assets/icons/user_edit.png') no-repeat;
     }
 
     .icon.user_delete {
-      background: url('/images/icons/user_delete.png') no-repeat;
+      background: url('/assets/icons/user_delete.png') no-repeat;
     }
   }
 }

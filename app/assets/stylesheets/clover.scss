@@ -1,6 +1,6 @@
 html {
   body {
-    background-image: url('/images/themes/clover/html_bg.jpg');
+    background-image: url('/assets/themes/clover/html_bg.jpg');
     background-repeat: repeat-x;
     background-color: #3B5061;
     font-size: .88em;
@@ -16,7 +16,7 @@ html {
     h3 { font-size: .93em; }
 
     div.hline1 {
-      background-image: url('/images/themes/clover/hline_bg.jpg');
+      background-image: url('/assets/themes/clover/hline_bg.jpg');
       background-color: white;
       height: 10px;
       width: 960px;
@@ -24,7 +24,7 @@ html {
     }
 
     div.hline2{
-      background-image: url('/images/themes/clover/hline2_bg.jpg ');
+      background-image: url('/assets/themes/clover/hline2_bg.jpg ');
       background-color: white;
       height: 10px;
       width: 960px;
@@ -37,7 +37,7 @@ html {
       text-align: left;
 
       #top {
-        background: #2D2D2D url('/images/themes/clover/top_bg.jpg') no-repeat;
+        background: #2D2D2D url('/assets/themes/clover/top_bg.jpg') no-repeat;
         width: 960px;
         height:100px;
 
@@ -76,7 +76,7 @@ html {
             }
 
             #hola.active a, #hola a:hover {
-              background: transparent url('/images/themes/clover/home_button.gif') no-repeat top center;
+              background: transparent url('/assets/themes/clover/home_button.gif') no-repeat top center;
                text-align: center;
             }
 
@@ -86,7 +86,7 @@ html {
             }
 
             #conoce.active a, #conoce a:hover {
-              background: transparent url('/images/themes/clover/conoce_button.gif') no-repeat top center;
+              background: transparent url('/assets/themes/clover/conoce_button.gif') no-repeat top center;
               text-align: center;
             }
 
@@ -96,7 +96,7 @@ html {
             }
 
             #crece.active a, #crece a:hover, #login.active a, #login a:hover {
-              background: transparent url('/images/themes/clover/crece_button.gif') no-repeat top center;
+              background: transparent url('/assets/themes/clover/crece_button.gif') no-repeat top center;
               text-align: center;
             }
 
@@ -106,7 +106,7 @@ html {
             }
 
             #negocio.active a, #negocio a:hover {
-              background: transparent url('/images/themes/clover/negocio_button.gif') no-repeat top center;
+              background: transparent url('/assets/themes/clover/negocio_button.gif') no-repeat top center;
               text-align: center;
             }
 
@@ -116,7 +116,7 @@ html {
             }
 
             #contacto.active a, #contacto a:hover, #live_chat.active a, #live_chat a:hover {
-              background: transparent url('/images/themes/clover/contacto_button.gif') no-repeat top center;
+              background: transparent url('/assets/themes/clover/contacto_button.gif') no-repeat top center;
               text-align: center;
             }
           }
@@ -124,7 +124,7 @@ html {
       }
 
       #banner {
-        background: transparent url('/images/themes/clover/banner_bg.jpg') no-repeat;
+        background: transparent url('/assets/themes/clover/banner_bg.jpg') no-repeat;
         background-color: #558C15;
         height: 280px;
 
@@ -218,7 +218,7 @@ html {
         padding: 40px 0px;
         overflow: hidden;
         height: 100%;
-        background: white url('/images/themes/clover/mid_bg.jpg') repeat-x;
+        background: white url('/assets/themes/clover/mid_bg.jpg') repeat-x;
 
         #content, #column {
           float: left;
@@ -261,7 +261,7 @@ html {
             text-align: center;
             padding: 11px 0px 11px 0px;
             color: #373737;
-            background-image: url('/images/themes/clover/side_header.gif');
+            background-image: url('/assets/themes/clover/side_header.gif');
             background-repeat: no-repeat;
           }
 
@@ -273,7 +273,7 @@ html {
           }
 
           .sidebar {
-            background-image: url('/images/themes/clover/side_bg.gif');
+            background-image: url('/assets/themes/clover/side_bg.gif');
             background-repeat: repeat-y;
             color: white;
 
@@ -297,7 +297,7 @@ html {
               a:hover {
                 line-height: 14px;
                 font-size: 14px;
-                background-image: url('/images/themes/clover/sb_item_bg.gif');
+                background-image: url('/assets/themes/clover/sb_item_bg.gif');
                 background-repeat: repeat-x;
                 background-color: #619504;
                 display: block;
@@ -309,7 +309,7 @@ html {
           }
 
           .sidebar_bottom {
-            background-image: url('/images/themes/clover/side_bottom.gif');
+            background-image: url('/assets/themes/clover/side_bottom.gif');
             height: 5px;
             line-height: 1px;
             font-size: 1px;
@@ -319,7 +319,7 @@ html {
       }
 
       #footer {
-        background: #2D2D2D url('/images/themes/clover/footer_bg.jpg');
+        background: #2D2D2D url('/assets/themes/clover/footer_bg.jpg');
         overflow: hidden;
         height: 100%;
         color: #ABABAB;
@@ -337,7 +337,7 @@ html {
           width: 280px;
           float: left;
           display: inline;
-          background-image: url('/images/themes/clover/footer_separator.gif');
+          background-image: url('/assets/themes/clover/footer_separator.gif');
           background-repeat: no-repeat;
           background-position: 260px 5px;
           margin: 0px 10px;
@@ -384,7 +384,7 @@ html {
       }
 
       #footer2 {
-        background-image: url("../../images/themes/clover/footer_bottom.gif ");
+        background-image: url("../../assets/themes/clover/footer_bottom.gif ");
         background-repeat: no-repeat;
         color: white;
         padding: 25px 20px 10px;
@@ -395,7 +395,7 @@ html {
   body.section {
     #wrapper {
       #banner {
-        background-image: url('/images/themes/clover/banner2_bg.jpg');
+        background-image: url('/assets/themes/clover/banner2_bg.jpg');
         height: 115px;
         overflow: hidden;
         line-height: 1.5em;
@@ -416,14 +416,14 @@ html {
 
       #mid {
         padding-bottom: 0px;
-        background-image: url('/images/themes/clover/separator_style2.jpg');
+        background-image: url('/assets/themes/clover/separator_style2.jpg');
         background-repeat: repeat-y;
         background-position: 302px 0px;
         padding: 0px;
         background-color: white;
 
         #imid {
-          background-image: url('/images/themes/clover/mid_style2.jpg');
+          background-image: url('/assets/themes/clover/mid_style2.jpg');
           background-repeat: no-repeat;
           height: 100%;
           overflow:hidden;
@@ -436,18 +436,18 @@ html {
             margin-left: 20px;
 
             h2.sb_header {
-              background-image: url('/images/themes/clover/sidebar2_top.jpg');
+              background-image: url('/assets/themes/clover/sidebar2_top.jpg');
               width: 258px;
             }
 
             .sidebar {
-              background-image: url('/images/themes/clover/sidebar2_bg.jpg');
+              background-image: url('/assets/themes/clover/sidebar2_bg.jpg');
               width: 258px;
               padding-bottom: 10px;
             }
 
             .sidebar_bottom {
-              background-image: url('/images/themes/clover/sidebar2_bottom.jpg');
+              background-image: url('/assets/themes/clover/sidebar2_bottom.jpg');
               height: 9px;
             }
           }

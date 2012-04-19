@@ -4,24 +4,24 @@ html {
 
   body {
     font-size: 14px;
-    background-image: url('/images/themes/default/html-bg.png');
+    background-image: url('/assets/themes/default/html-bg.png');
 
     #wrapper {
       width: 960px;
       margin: 0 auto;
-      background: #F9F9F9 url('/images/themes/default/column-shadow.png') repeat-y 630px 0px;
+      background: #F9F9F9 url('/assets/themes/default/column-shadow.png') repeat-y 630px 0px;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 20px;
 
       #header {
-        background-image: url('/images/themes/default/tjruby-sprite2.png ');
+        background-image: url('/assets/themes/default/tjruby-sprite2.png ');
         height:155px;
         background-position:0px -493px;
         background-repeat:repeat-x;
         overflow:hidden;
 
       #logo{
-          background-image: url('/images/themes/default/tjruby-sprite2.png ');
+          background-image: url('/assets/themes/default/tjruby-sprite2.png ');
           width:159px;
           height:59px;
           background-repeat:no-repeat;
@@ -32,7 +32,7 @@ html {
       }
 
       #navigation {
-        background-image: url('/images/themes/default/tjruby-sprite2.png ');
+        background-image: url('/assets/themes/default/tjruby-sprite2.png ');
         background-position:0px -89px;
         height:56px;
         padding:0px 25px;
@@ -53,7 +53,7 @@ html {
           }
 
           a:hover, a.current{
-            background-image: url('/images/themes/default/tjruby-sprite2.png ');
+            background-image: url('/assets/themes/default/tjruby-sprite2.png ');
             background-position:0px -145px;
             @include border-radius(5px);
           }
@@ -61,7 +61,7 @@ html {
       }
 
       #main {
-        background: url('/images/themes/default/main-bg.png') no-repeat scroll 0 0 transparent;
+        background: url('/assets/themes/default/main-bg.png') no-repeat scroll 0 0 transparent;
         padding:50px;
         overflow:hidden;
 
@@ -80,7 +80,7 @@ html {
       }
 
       #main_bottom {
-        background: #82011e url('/images/themes/default/main-bottom-bg.png ') repeat-x;
+        background: #82011e url('/assets/themes/default/main-bottom-bg.png ') repeat-x;
         padding:30px 50px;
         color:#ededdc;
         color:#d4d4c5;
@@ -100,7 +100,7 @@ html {
     }
 
     #page_top, #footer {
-      background-image: url('/images/themes/default/page-top.png');
+      background-image: url('/assets/themes/default/page-top.png');
       background-repeat: repeat-x;
       height: 30px;
       color: #2C292A;

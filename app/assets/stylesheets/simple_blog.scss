@@ -9,7 +9,7 @@ html {
   }
 
   body {
-    background: url('/images/themes/simple_blog/bg_pattern.png') repeat scroll 0 0 #333;
+    background: url('/assets/themes/simple_blog/bg_pattern.png') repeat scroll 0 0 #333;
     font: 13.34px helvetica, arial, free-sans, clean, sans-serif;
 
     #wrapper {
@@ -122,13 +122,13 @@ html {
         ul li { list-style: none; }
         ul.icons li { margin-left: 25px; }
 
-        ul li.twitter   { list-style-image: url('/images/themes/simple_blog/icons/16/twitter.png'); }
-        ul li.facebook  { list-style-image: url('/images/themes/simple_blog/icons/16/facebook.png'); }
-        ul li.myspace   { list-style-image: url('/images/themes/simple_blog/icons/16/myspace.png'); }
-        ul li.youtube   { list-style-image: url('/images/themes/simple_blog/icons/16/youtube.png'); }
-        ul li.msn       { list-style-image: url('/images/themes/simple_blog/icons/16/msn.png'); }
-        ul li.gtalk     { list-style-image: url('/images/themes/simple_blog/icons/16/gtalk.png'); }
-        ul li.skype     { list-style-image: url('/images/themes/simple_blog/icons/16/skype.png'); }
+        ul li.twitter   { list-style-image: url('/assets/themes/simple_blog/icons/16/twitter.png'); }
+        ul li.facebook  { list-style-image: url('/assets/themes/simple_blog/icons/16/facebook.png'); }
+        ul li.myspace   { list-style-image: url('/assets/themes/simple_blog/icons/16/myspace.png'); }
+        ul li.youtube   { list-style-image: url('/assets/themes/simple_blog/icons/16/youtube.png'); }
+        ul li.msn       { list-style-image: url('/assets/themes/simple_blog/icons/16/msn.png'); }
+        ul li.gtalk     { list-style-image: url('/assets/themes/simple_blog/icons/16/gtalk.png'); }
+        ul li.skype     { list-style-image: url('/assets/themes/simple_blog/icons/16/skype.png'); }
 
         h2 {
           font-weight: bold;
