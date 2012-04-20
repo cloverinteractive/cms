@@ -6,10 +6,8 @@ page    = section.pages.build( :name => 'main page', :content => 'this is my mai
 # We create and activate a default user
 
 user = User.create! :username => 'admin', :password => 'administrator', :email => "admin@example.com"
-user.confirmed_at = Time.now
+user.confirm!
 user.save!
-
-user.has_role! :admin
 
 # We create the default non-destroyable site settings
 

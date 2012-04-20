@@ -1,35 +1,32 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
-gem 'client_side_validations', '3.0.2'
+gem 'rails', '~> 3.2.2'
+
 gem 'kaminari'
-gem 'sass'
 gem 'haml-rails'
 gem 'devise'
 gem 'paperclip'
 gem 'acts-as-taggable-on'
-gem 'mime-types', :require => 'mime/types'
-gem "compass", ">= 0.10.6"
 gem 'tabs_on_rails'
 gem 'jquery-rails'
-gem 'acl9'
+gem 'simple_form'
+gem 'single_test'
 gem 'capistrano'
-gem 'clovercms-dashboard', :require => 'dashboard'
+gem 'mime-types', :require => 'mime/types'
 
-group :development do
-  gem 'metric_fu',    :require => false
-  gem 'fattr',        :require => false
-  gem 'arrayfields',  :require => false
-  gem 'map',          :require => false
-end
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier',     '>= 1.0.3'
+  gem 'compass-rails'
+  gem 'fancybox-rails'
+ end
 
 group :development, :test do
-  gem 'jasmine',      "~> 1.1.0.rc4"
   gem "rspec-rails",  "~> 2.6"
 end
 
 group :test do
-  gem 'cucumber-rails'
   gem 'launchy'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
@@ -39,7 +36,7 @@ end
 
 platforms :ruby do
   group :test, :development do
-    gem 'sqlite3-ruby', :require => 'sqlite3'
+    gem 'sqlite3'
   end
 
   group :production do

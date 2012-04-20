@@ -1,13 +1,6 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
-  has_attached_file :avatar, :styles => {
-                                          :medium_scaled  => "45x45>",
-                                          :medium         => "45x45#",
-                                          :thumb_scaled   => "50x50>",
-                                          :thumb          => "50x50#"
-                                        }
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :lockable
 
-  acts_as_authorization_subject :association_name => :roles
   validates_format_of :username, :with => /^([a-z0-9\-_.]{2,31})$/i
 
   attr_accessor :login

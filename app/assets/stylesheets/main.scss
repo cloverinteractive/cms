@@ -1,0 +1,107 @@
+@import 'compass/reset';
+
+#wrapper {
+  .error, .warning, .info, .success {
+    padding:10px;
+    padding-left:40px;
+    margin:10px 0px;
+  }
+
+  .error{
+    border:1px solid #ff9b9b;
+    background:#ffd3d3 url('/assets/system-error-alt.png') no-repeat 10px 7px;
+    color:#de1414;
+  }
+
+  .info {
+    border:1px solid #5abef3;
+    background:#d9f4ff url('/assets/system-info-alt.png') no-repeat 10px 7px;
+    color:#0069cb;
+  }
+
+  .success {
+    border:1px solid #78ce4d;
+    background:#e8ffe2 url('/assets/success.png') no-repeat 10px 7px;
+    color:#007e1b;
+  }
+
+  .warning {
+    border: 1px solid #c4bc16;
+    background: #fffed7 url('/assets/warning.png') no-repeat 10px 7px;
+    color: #6e6000;
+  }
+
+  .clear {
+    clear:both;
+    line-height:1px;
+    font-size:1px;
+  }
+
+  .center { text-align: center; }
+
+  .left { text-align: left; }
+
+  .right { text-align: right; }
+
+  .float_right { float: right; }
+
+  .float_left { float: left; }
+
+  .bold { font-weight: bolder; }
+
+  #content {
+    .columns{
+      overflow:hidden;
+      .half {
+        display: inline;
+        width: 49%;
+        float: left;
+        margin-right: 1%;
+
+        h1 span.right, h2 span.right, h3 span.right, h4 span.right, h5 span.right, h6 span.right {
+          position: absolute;
+          float: right;
+          margin-top: 0px;
+          right: 0px;
+        }
+      }
+    }
+
+    .icon {
+      background-position: 0 40%;
+      padding-left: 20px;
+      padding-right: 5px;
+    }
+
+    .icon.edit {
+      background: url('/assets/icons/pencil.png') no-repeat;
+    }
+
+    .icon.delete {
+      background: url('/assets/icons/delete.png') no-repeat;
+    }
+
+    .icon.user_edit {
+      background: url('/assets/icons/user_edit.png') no-repeat;
+    }
+
+    .icon.user_delete {
+      background: url('/assets/icons/user_delete.png') no-repeat;
+    }
+  }
+}
+
+.field_with_errors input, .field_with_errors textarea {
+  background-color: #FFAAAA;
+  border: 2px solid #A00000 !important;
+  color: #AA0000;
+}
+
+.wym_section.wym_dropdown {
+  display: none;
+}
+
+.wym_skin_compact {
+  border: 0px !important;
+  padding: 5px 15px;
+}

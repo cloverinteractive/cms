@@ -1,8 +1,4 @@
 class Dashboard::UsersController < ApplicationController
-  access_control do
-    allow :admin
-  end
-
   set_tab :list_users, :only => :index
 
   def index

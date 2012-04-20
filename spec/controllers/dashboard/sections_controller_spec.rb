@@ -6,9 +6,9 @@ describe Dashboard::SectionsController do
     @section  = Factory.create :section
   end
 
-  describe "when user is admin" do
+  describe "when user is logged in" do
     before :each do
-      login_as @user, :admin
+      login_as @user
     end
 
     describe "GET index" do

@@ -4,10 +4,6 @@ class Dashboard::SectionsController < ApplicationController
   set_tab :list_sections, :only => :index
   set_tab :new_section,   :only => :new
 
-  access_control do
-    allow :admin
-  end
-
   # GET /sections
   def index
     @sections = Section.page params[:page]

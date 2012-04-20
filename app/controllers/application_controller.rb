@@ -1,19 +1,17 @@
 class ApplicationController < ActionController::Base
-  extend ActiveSupport::Memoizable
   before_filter :set_locale, :authenticate_user!
   layout :guess_layout
 
   rescue_from ActiveRecord::RecordNotFound,     :with => :record_missing
   rescue_from Clover::PageNotFoundError,        :with => :page_not_found
   rescue_from Clover::UnauthorizedAccessError,  :with => :unauthorized_access
-  rescue_from Acl9::AccessDenied,               :with => :unauthorized_access
 
   protect_from_forgery
 
   helper_method :site
 
   def site
-    Setting.get_site_settings
+    @site ||= Setting.get_site_settings
   end
 
   private
@@ -69,6 +67,4 @@ class ApplicationController < ActionController::Base
     render 'public/404.html', :status => :not_found, :layout => false
     return false
   end
-
-  memoize :site
 end

@@ -16,3 +16,4 @@ public/.htaccess
 *.bak
 Thumbs.db
 .bundle
+bin/

@@ -7,21 +7,11 @@ FactoryGirl.define do
     "user#{n}@email.com"
   end
 
-  factory :role do
-    name 'admin'
-  end
-
   factory :user do
     username  'user'
     email     { Factory.next :email }
     password  'password'
     password_confirmation 'password'
-  end
-
-  factory :admin, :parent => :user do
-    username  'admin'
-    email     'admin@email.com'
-    roles [ Factory.create( :role ) ]
   end
 
   factory :page do
