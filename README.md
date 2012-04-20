@@ -1,18 +1,14 @@
-```
-              _                     _       _                      _   _
-  .-.-.   ___| | _____   _____ _ __(_)_ __ | |_ ___ _ __ __ _  ___| |_(_)_   _____
- (_\|/_) / __| |/ _ \ \ / / _ \ '__| | '_ \| __/ _ \ '__/ _` |/ __| __| \ \ / / _ \
- ( /|\ )| (__| | (_) \ V /  __/ |  | | | | | ||  __/ | | (_| | (__| |_| |\ V /  __/
-  '-'-'  \___|_|\___/ \_/ \___|_|  |_|_| |_|\__\___|_|  \__,_|\___|\__|_| \_/ \___|
-```
-
 # Clover CMS [![Build Status](http://travis-ci.org/cloverinteractive/clovercms.png)](http://travis-ci.org/cloverinteractive/clovercms)
 
-__A dead simple content management system for Rails 3.__
+__A dead simple content management system for Rails 3.2.3__
+
+CloveCMS provides the simpler barebones for creating a website, in v1.1 we embraced an even simpler approach by making it a single user app
+that means v1.1 does not support ACL nor multiple users, these features are present on v1.0, if you need ACL and multiple users checkout v1.0,
+if all you need a is a simple page generator v1.1 should be enough, if you need more features checkout [RefinercyCMS](https://github.com/resolve/refinerycms)
+it comes in a gem.
 
 ## Requirements
 
-* [metric_fu](http://metric-fu.rubyforge.org/)
 * [ImageMagick](http://www.imagemagick.org/script/install-source.php)
 * [Bundler](http://gembundler.com)
 
@@ -27,7 +23,7 @@ To install and run in development:
 
 ## Running the tests
 
-`rake spec cucumber`
+`rake spec`
 
 ## Supported platforms
 
@@ -44,18 +40,12 @@ We take JRuby into consideration, and our Gemfile works nice with its platforms,
 0. `rm -f Gemfile.lock`
 1. `jruby -S bundle install`
 
-## Check code metrics
-
-We use `metric_fu` for code metrics, that said `rcov` is known to fail when using ruby 1.9, at this moment metrics can only be generated in ruby 1.8.7.
-
-To run code metrics, `rake metrics:all`
-
 ## Contribute
 
 Feel free to submit a pull request and don't forget to add your name to the list below.
 
 ## Contributors
 
-* [Enrique Vidal](http://github.com/EnriqueVidal) - Creator, ruby developer
-* [Adan Alvarado](http://github.com/aalvarado) - Designer of the Open Source Dashboard theme and front-end developer
+* [Enrique Vidal](http://github.com/EnriqueVidal)
+* [Adan Alvarado](http://github.com/aalvarado)
 * [ulisesroche](http://github.com/ulisesroche)
