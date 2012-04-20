@@ -11,6 +11,7 @@ gem 'tabs_on_rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'single_test'
+gem 'capistrano'
 gem 'mime-types', :require => 'mime/types'
 
 group :assets do
