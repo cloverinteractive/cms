@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PagesController do
   before :each do
     @page = Factory.create :page, :home_page => true
-    get :show, :page => @page.url_name, :section => @page.section.url_name
+    get :show, :page => @page.slug, :section => @page.section.slug
   end
 
   it "response should be sucessful" do

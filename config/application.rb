@@ -1,11 +1,15 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+# Pick the frameworks you want:
+require "active_record/railtie"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "sprockets/railtie"
+# require "rails/test_unit/railtie"
 
 if defined?(Bundler)
-  # you've limited to :test, :development, or :production.
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(:default, Rails.env) if defined?(Bundler)
   Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
@@ -45,8 +49,8 @@ module Clover
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.assets.precompile += %w(clover.css tjruby.css dashboard.css simple_blog.css sessions.css jquery-ui.css)
-    config.assets.precompile += %w(wymeditor/jquery.wymeditor.min.js uploadify/uploadify.js uploadify/swfobject.js)
+    config.assets.precompile += %w( clover.css tjruby.css dashboard.css simple_blog.css sessions.css jquery-ui.css )
+    config.assets.precompile += %w( wymeditor/jquery.wymeditor.min.js uploadify/uploadify.min.js uploadify/swfobject.js )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

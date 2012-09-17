@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :lockable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :lockable, :registerable
 
   validates_format_of :username, :with => /^([a-z0-9\-_.]{2,31})$/i
 

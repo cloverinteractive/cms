@@ -4,13 +4,13 @@ class PagesController < ApplicationController
   # GET /:section/:page
   # GET /:section/:subsection/:page
   def show
-    @page   = subsection.pages.published.find_by_url_name( params[:page] ) if subsection
-    @page ||=    section.pages.published.find_by_url_name( params[:page] ) if section
+    @page   = subsection.pages.published.find( params[:page] ) if subsection
+    @page ||=    section.pages.published.find( params[:page] ) if section
 
     raise Clover::PageNotFoundError if @page.blank?
 
     if @page.has_contact?
-      @contact_form = render_to_string(:partial => 'contact_forms/contact_form', :object => ContactForm.new)
+      @contact_form = render_to_string :partial => 'contact_forms/contact_form', :object => ContactForm.new
     end
   end
 
@@ -23,11 +23,11 @@ class PagesController < ApplicationController
 
   private
   def subsection
-    @subsection ||= Section.find_by_url_name params[:subsection]
+    @subsection ||= Section.where( :slug => params[:subsection] ).first
   end
 
   def section
-    @section ||= @subsection.main_section if @subsection
-    @section ||= Section.find_by_url_name params[:section] if params[:subsection].blank?
+    @section    = @subsection.try :main_section
+    @section  ||= Section.find params[:section]
   end
 end

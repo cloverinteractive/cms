@@ -13,7 +13,9 @@ public/stylesheets/*.css
 public/images/system
 public/system
 public/.htaccess
+public/assets
 *.bak
 Thumbs.db
 .bundle
 bin/
+config/vhost.conf
