@@ -1,6 +1,6 @@
 # Clover CMS [![Build Status](http://travis-ci.org/cloverinteractive/clovercms.png)](http://travis-ci.org/cloverinteractive/clovercms)
 
-__A dead simple content management system for Rails 3.2.3__
+__A dead simple content management system for Rails 3.2.8__
 
 CloveCMS provides the simpler barebones for creating a website, in v1.1 we embraced an even simpler approach by making it a single user app
 that means v1.1 does not support ACL nor multiple users, these features are present on v1.0, if you need ACL and multiple users checkout v1.0,
@@ -19,7 +19,7 @@ To install and run in development:
 0. `git clone git://github.com/cloverinteractive/clovercms.git`
 1. `cd clovercms`
 2. `bundle install`
-3. `rake db:migrate db:seed`
+3. `rake db:setup`
 
 ## Running the tests
 
