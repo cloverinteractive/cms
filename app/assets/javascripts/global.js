@@ -1,8 +1,9 @@
+/*
 $(function() {
   $.fn.loopedSlider.defaults.addPagination = true;
   $('#slider').loopedSlider({ autoStart: 5000, containerClick: false });
 });
-
+*/
 
 // Add images to editor
 function add_images()

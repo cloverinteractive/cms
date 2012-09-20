@@ -1,13 +1,6 @@
 - content_for :head do
   = stylesheet_link_tag 'jquery-ui'
-  = javascript_include_tag 'wymeditor/jquery.wymeditor.min', 'uploadify/uploadify.min', 'uploadify/swfobject'
-  :javascript
-    $(function() {
-      $("textarea.wymeditor").wymeditor({
-        logoHtml: '',
-        skin: 'compact'
-      });
-    });
+  = javascript_include_tag 'uploadify/uploadify.min', 'uploadify/swfobject'
 
 - content_for :nav_wrap do
   %ul#nav

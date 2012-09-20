@@ -2,12 +2,13 @@
 = render 'layouts/dashboard/head', :selected_tab => selected_tab
 = render 'layouts/dashboard/navigation'
 = render 'layouts/dashboard/top'
+
 !!!
 %html
   %head
     %title= content_for?(:title) ? yield(:title) : 'Dashboard'
     = javascript_include_tag :application
-    = stylesheet_link_tag 'dashboard'
+    = stylesheet_link_tag 'main', 'dashboard'
     = yield :head
     = csrf_meta_tag
   %body

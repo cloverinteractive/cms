@@ -6,5 +6,6 @@
 //= require fancybox
 //= require jquery.easing
 //= require loopedslider
-//= require wymeditor
+//= require bootstrap
+//= require markdown_editor
 //= require_tree .

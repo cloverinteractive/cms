@@ -2,15 +2,16 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.14'
 
-gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'haml-rails'
 gem 'devise'
-gem 'paperclip'
+gem 'devise_invitable'
+gem 'carrierwave'
+gem 'rmagick'
 gem 'acts-as-taggable-on'
 gem 'tabs_on_rails'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'single_test'
 gem 'capistrano'
 gem 'mime-types', :require => 'mime/types'
 gem 'symbolize'
@@ -32,6 +33,7 @@ group :assets do
   gem 'uglifier',     '>= 1.0.3'
   gem 'therubyracer'
   gem 'compass-rails'
+  gem 'bootstrap-sass'
   gem 'fancybox-rails'
  end
 
@@ -39,11 +41,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'single_test'
   gem 'launchy'
+  gem 'evergreen',    :group => [ :test, :development ], :require => 'evergreen/rails'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '1.7.0'
   gem 'capybara-webkit'
   gem 'mocha', :require => false
   gem 'simplecov'

@@ -5,7 +5,10 @@
       = t 'common.fields.name'
       %small= t 'common.descriptions.url.item_name', :item => t('activerecord.models.page').downcase
     = f.text_field  :name
-    = f.text_area :content, :class => 'wymeditor'
+
+    .wmd-panel
+      #wmd-button-bar
+      = f.text_area :content, :id => 'wmd-input', :class => 'wmd-input'
 
     %label{ :for => :page_section_id }
       = t 'activerecord.attributes.page.section'
@@ -25,7 +28,6 @@
 :javascript
   $(document).ready(function() {
     $('#tabs').tabs();
-    $('.wymupdate').button({ icons: { primary: "ui-icon-circle-check" } });
     $('.buttonset').buttonset();
     $('.home_page').button({ icons: { primary: "ui-icon-home" } });
     $('.contact_form').button({ icons: { primary: "ui-icon-mail-closed" } });
