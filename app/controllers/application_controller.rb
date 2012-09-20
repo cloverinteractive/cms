@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale, :authenticate_user!
   layout :guess_layout
 
-  rescue_from ActiveRecord::RecordNotFound,     :with => :record_missing
+  rescue_from ActiveRecord::RecordNotFound,     :with => :page_not_found
   rescue_from Clover::PageNotFoundError,        :with => :page_not_found
   rescue_from Clover::UnauthorizedAccessError,  :with => :unauthorized_access
 
@@ -16,25 +16,22 @@ class ApplicationController < ActionController::Base
 
   private
   def set_locale
-    session[:locale]  = params[:locale] if params[:locale].present?
-    I18n.locale       = session[:locale] || site[:default_locale]
+    session[:locale]  = params[:locale] || site[:default_locale]
+    I18n.locale       = session[:locale]
   end
 
   def devise_layout
-    if controller_name == "registrations" && ( action_name == "edit" || action_name == "update" )
+    if controller_name == 'registrations'
       set_tab :edit_user
-      'dashboard'
-    else
-      'sessions'
+      return 'dashboard'
     end
+
+    'sessions'
   end
 
   def website_layout
-    if site[:theme].present?
-      "themes/#{site[:theme]}/theme"
-    else
-      'themes/default/theme'
-    end
+    return "themes/#{ site[:theme] }/theme" if site[:theme].present?
+    'themes/default/theme'
   end
 
   def dashboard_controller?
@@ -55,16 +52,9 @@ class ApplicationController < ActionController::Base
   def unauthorized_access
     flash[:info] = t 'messages.unauthorized_access'
     redirect_to new_user_session_path
-    return false
-  end
-
-  def record_missing
-    render 'public/404.html', :status => :not_found, :layout => false
-    return false
   end
 
   def page_not_found
-    render 'public/404.html', :status => :not_found, :layout => false
-    return false
+    render 'public/404.html', :formats => [ :html ], :status => :not_found, :layout => false
   end
 end

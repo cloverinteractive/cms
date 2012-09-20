@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209072651) do
+ActiveRecord::Schema.define(:version => 20120918223422) do
 
   create_table "assets", :force => true do |t|
     t.string  "description"
@@ -26,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20110209072651) do
 
   create_table "pages", :force => true do |t|
     t.string   "name"
-    t.string   "url_name"
     t.text     "content"
     t.integer  "section_id"
     t.boolean  "published",   :default => false
@@ -34,19 +34,22 @@ ActiveRecord::Schema.define(:version => 20110209072651) do
     t.boolean  "has_contact", :default => false
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+    t.string   "slug"
   end
 
   add_index "pages", ["section_id"], :name => "index_pages_on_section_id"
+  add_index "pages", ["slug"], :name => "index_pages_on_slug", :unique => true
 
   create_table "sections", :force => true do |t|
     t.string   "name"
     t.integer  "main_section_id"
-    t.string   "url_name"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "slug"
   end
 
   add_index "sections", ["main_section_id"], :name => "index_sections_on_main_section_id"
+  add_index "sections", ["slug"], :name => "index_sections_on_slug", :unique => true
 
   create_table "settings", :force => true do |t|
     t.string   "name",                          :null => false

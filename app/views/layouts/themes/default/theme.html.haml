@@ -2,7 +2,7 @@
 %html
   %head
     %title= (content_for? :title) ? yield(:title) : 'CloverCMS - TJRuby theme'
-    = stylesheet_link_tag 'application', 'tjruby'
+    = stylesheet_link_tag :application, :tjruby
   %body
     #wrapper
       #page_top

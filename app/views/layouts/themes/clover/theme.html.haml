@@ -1,17 +1,9 @@
-!!!5
+!!!
 %html
   %head
     %title= content_for?(:title) ? yield(:title) : 'CloverInteractive'
-    = javascript_include_tag 'application'
-    = stylesheet_link_tag 'application', 'clover.css'
-
-    - if @page.present? && @page.home_page?
-      :javascript
-        $(function() {
-          $.fn.loopedSlider.defaults.addPagination = true;
-          $('#slider').loopedSlider({ autoStart: 5000, containerClick: false });
-        });
-
+    = javascript_include_tag :application
+    = stylesheet_link_tag :application, :clover
     = yield :head
     = csrf_meta_tag
   %body{ :class => ( @page.present? && @page.home_page ? '' : 'section' ) }

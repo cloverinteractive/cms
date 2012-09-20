@@ -8,19 +8,13 @@ class Setting < ActiveRecord::Base
   attr_accessible :name, :value, :description, :destroyable
 
   def delete
-    if destroyable?
-      super
-    else
-      false
-    end
+    return super if destroyable?
+    false
   end
 
   def delete!
-    if destroyable?
-      super
-    else
-      false
-    end
+    return super if destroyable?
+    false
   end
 
   def self.get_site_settings

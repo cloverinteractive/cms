@@ -1,5 +1,5 @@
 Clover::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'users/registrations' }
 
   resource :contact_form, :only => [ :create ]
 
@@ -14,8 +14,8 @@ Clover::Application.routes.draw do
     resources :pages,     :except => :show
   end
 
-  match ":section/:page",             :to => "pages#show", :as => :section_page,    :via => :get
-  match ":section/:subsection/:page", :to => "pages#show", :as => :subsection_page, :via => :get
+  match ":section/:page",             :to => "pages#show", :as => :section_page,    :via => :get, :format => :html
+  match ":section/:subsection/:page", :to => "pages#show", :as => :subsection_page, :via => :get, :format => :html
 
   root :to => "pages#home", :via => :get
 end

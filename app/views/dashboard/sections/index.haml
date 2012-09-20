@@ -12,4 +12,4 @@
       %th= t 'common.fields.updated_at'
       %th= t 'common.messages.options'
   %tbody= render :partial => 'section', :collection => @sections
-= paginate @sections
+= will_paginate @sections

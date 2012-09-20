@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.2'
+gem 'rails', '3.2.8'
 
-gem 'kaminari'
+gem 'will_paginate'
 gem 'haml-rails'
 gem 'devise'
 gem 'paperclip'
@@ -13,6 +13,14 @@ gem 'simple_form'
 gem 'single_test'
 gem 'capistrano'
 gem 'mime-types', :require => 'mime/types'
+gem 'symbolize'
+gem 'friendly_id', '~> 4.0.1'
+
+group :development do
+  gem 'quiet_assets'
+  gem 'bullet'
+  gem 'pry-rails'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -27,10 +35,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'launchy'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'capybara'
+  gem 'capybara-webkit'
   gem 'mocha', :require => false
 end
 

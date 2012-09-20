@@ -20,7 +20,7 @@ describe Section do
     end
   end
 
-  it "should have an url_name after created" do
-    @section.url_name.should be_present
+  it "should have an slug after created" do
+    @section.slug.should be_present
   end
 end
