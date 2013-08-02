@@ -55,6 +55,6 @@ class ApplicationController < ActionController::Base
   end
 
   def page_not_found
-    render 'public/404.html', :formats => [ :html ], :status => :not_found, :layout => false
+    render 'public/404', :formats => [ :html ], :status => :not_found, :layout => false
   end
 end

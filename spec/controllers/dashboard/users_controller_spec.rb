@@ -1,14 +1,10 @@
 require 'spec_helper'
 
 describe Dashboard::UsersController do
-  before :each do
-    @user = Factory.create :user
-  end
+  let( :user ) { create :user }
 
   describe "when user is logged in" do
-    before :each do
-      login_as @user
-    end
+    before { sign_in user }
 
     describe "GET index" do
       before :each do
@@ -20,7 +16,7 @@ describe Dashboard::UsersController do
       end
 
       it "should assign @users" do
-        assigns( :users ).should == [ @user ]
+        assigns( :users ).should include( user )
       end
 
       it "should render index" do
@@ -30,11 +26,7 @@ describe Dashboard::UsersController do
 
     describe "DELETE destroy" do
       before :each do
-        delete :destroy, :id => @user
-      end
-
-      it "should delete user" do
-        User.count.should == 0
+        expect { delete :destroy, id: user }.to change { User.count }.by -1
       end
 
       it "should redirect to index" do
@@ -51,7 +43,7 @@ describe Dashboard::UsersController do
       end
 
       it "should redirect to login when using DELETE" do
-        delete :destroy, :id => @user
+        delete :destroy, id: user
         response.should redirect_to( new_user_session_path )
       end
     end

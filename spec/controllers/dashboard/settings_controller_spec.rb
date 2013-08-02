@@ -1,15 +1,11 @@
 require 'spec_helper'
 
 describe Dashboard::SettingsController do
-  before :each do
-    @user     = Factory.create :user
-    @setting  = Factory.create :setting, :name => 'test_setting', :value => 'true'
-  end
+  let( :user )    { create :user }
+  let( :setting ) { create :setting, name: 'test_setting', value: 'true' }
 
   describe "when user is logged in" do
-    before :each do
-      login_as @user
-    end
+    before { sign_in user }
 
     describe "GET index" do
       before :each do
@@ -21,7 +17,7 @@ describe Dashboard::SettingsController do
       end
 
       it "should assign @settings" do
-        assigns( :settings ).should == [ @setting ]
+        assigns( :settings ).should include( setting )
       end
 
       it "should render index" do
@@ -49,7 +45,7 @@ describe Dashboard::SettingsController do
 
     describe "GET edit" do
       before :each do
-        get :edit, :id => @setting
+        get :edit, id: setting
       end
 
       it "should be successful" do
@@ -67,11 +63,7 @@ describe Dashboard::SettingsController do
 
     describe "POST create" do
       before :each do
-        post :create, :setting => Factory.attributes_for( :setting )
-      end
-
-      it "should create setting" do
-        Setting.count.should == 2
+        expect { post :create, setting: attributes_for( :setting ) }.to change { Setting.count }.by 1
       end
 
       it "should assign @setting" do
@@ -83,18 +75,18 @@ describe Dashboard::SettingsController do
       end
 
       it "should render new should anything go wrong" do
-        post :create, :setting => Factory.attributes_for( :setting, :name => '' )
+        post :create, setting: attributes_for( :setting, name: nil )
         response.should render_template( :new )
       end
     end
 
     describe "PUT update" do
       before :each do
-        put :update, :id => @setting, :setting => { :name => 'batman' }
+        put :update, id: setting, setting: { name: 'batman' }
       end
 
       it "should update setting" do
-        assigns( :setting ).should == @setting.reload
+        assigns( :setting ).should eql( setting.reload )
       end
 
       it "should assign @setting" do
@@ -106,18 +98,16 @@ describe Dashboard::SettingsController do
       end
 
       it "should render edit should anything go wrong" do
-        put :update, :id => @setting, :setting => { :name => '' }
+        put :update, id: setting, setting: { name: nil }
         response.should render_template( :edit )
       end
     end
 
     describe "DELETE destroy" do
-      before :each do
-        delete :destroy, :id => @setting
-      end
+      before { delete :destroy, id: setting }
 
       it "should destroy setting" do
-        Setting.count.should == 0
+        Setting.count.should eql( 0 )
       end
 
       it "should redirect to index" do
@@ -125,13 +115,10 @@ describe Dashboard::SettingsController do
       end
 
       it "should not destroy if setting is not destroyable" do
-        setting = Factory.create :setting
         setting.destroyable = false
         setting.save!
 
-        delete :destroy, :id => setting
-        Setting.count.should == 1
-        Setting.first.should == setting
+        expect { delete :destroy, :id => setting }.to_not change { Setting.count }
       end
     end
   end
@@ -141,23 +128,23 @@ describe Dashboard::SettingsController do
       it "should redirect to login when using GET" do
         actions = %w/index new edit/
         actions.each do |action|
-          get action, :id => @setting
+          get action, id: setting
           response.should redirect_to( new_user_session_path )
         end
       end
 
       it "should redirect to login when using POST" do
-        post :create, :setting => Factory.attributes_for( :setting )
+        post :create, setting: attributes_for( :setting )
         response.should redirect_to( new_user_session_path )
       end
 
       it "should redirect to login when using PUT" do
-        put :update, :id => @setting, :setting => { :name => 'batman' }
+        put :update, id: setting, setting: { name: 'batman' }
         response.should redirect_to( new_user_session_path )
       end
 
       it "should redirect to login when using DELETE" do
-        delete :destroy, :id => @setting
+        delete :destroy, id: setting
         response.should redirect_to( new_user_session_path )
       end
     end

@@ -1,16 +1,14 @@
 require 'spec_helper'
 
 describe Dashboard::PagesController do
-  before :each do
-    @user     = Factory.create :user
-    @section  = Factory.create :section
-    @page     = Factory.create :page, :section => @section
-  end
+  let( :user )    { create :user }
+  let( :section ) { create :section }
+  let( :page )    { create :page, section: section }
+
+  before { page.should be_persisted }
 
   describe "when user is logged  in" do
-    before :each do
-      login_as @user
-    end
+    before { sign_in user }
 
     describe "GET index" do
       before :each do
@@ -18,7 +16,7 @@ describe Dashboard::PagesController do
       end
 
       it "should assign @pages" do
-        assigns( :pages ).should == [ @page ]
+        assigns( :pages ).should include( page )
       end
 
       it "should be successful" do
@@ -50,7 +48,7 @@ describe Dashboard::PagesController do
 
     describe "GET edit" do
       before :each do
-        get :edit, :id => @page
+        get :edit, id: page
       end
 
       it "should assign @page" do
@@ -67,10 +65,9 @@ describe Dashboard::PagesController do
     end
 
     describe "POST create" do
-      before :each do
-        @page_attr = Factory.attributes_for :page, :name => 'new page', :section_id => @section.id
-        post :create, :page => @page_attr
-      end
+      let( :page_attr ) { attributes_for :page, name: 'new page', section_id: section.id }
+
+      before { post :create, :page => page_attr }
 
       it "should redirect to index" do
         response.should redirect_to( dashboard_pages_path )
@@ -82,14 +79,14 @@ describe Dashboard::PagesController do
       end
 
       it "should render new if anything goes wrong" do
-        post :create, :page => @page_attr.merge( :name => @page.name )
+        post :create, :page => page_attr.merge( name: page.name )
         response.should render_template( :new )
       end
     end
 
     describe "PUT update" do
       before :each do
-        put :update, :id => @page, :page => { :name => 'batman' }
+        put :update, :id => page, page: { name: 'batman' }
       end
 
       it "should redirect to index" do
@@ -97,7 +94,7 @@ describe Dashboard::PagesController do
       end
 
       it "should update @page" do
-        assigns( :page ).should == @page.reload
+        assigns( :page ).should eql( page.reload )
       end
 
       it "should assign @page" do
@@ -107,11 +104,11 @@ describe Dashboard::PagesController do
 
     describe "DELETE destroy" do
       before :each do
-        delete :destroy, :id => @page
+        delete :destroy, id: page
       end
 
       it "should destroy page" do
-        Page.count.should == 0
+        Page.count.should eql( 0 )
       end
 
       it "should redirect to index" do
@@ -125,23 +122,23 @@ describe Dashboard::PagesController do
       it "should redirect to login when using GET" do
         actions = %w/index new edit/
         actions.each do |action|
-          get action, :id => @page
+          get action, id: page
           response.should redirect_to( new_user_session_path )
         end
       end
 
       it "should redirect to login when using POST" do
-        post :create, :page => Factory.attributes_for( :page )
+        post :create, page: attributes_for( :page )
         response.should redirect_to( new_user_session_path )
       end
 
       it "should redirect to login when using PUT" do
-        put :update, :id => @page, :page => { :name => '' }
+        put :update, id: page, page: { name: '' }
         response.should redirect_to( new_user_session_path )
       end
 
       it "should redirect to login when using DELETE" do
-        delete :destroy, :id => @page
+        delete :destroy, id: page
         response.should redirect_to( new_user_session_path )
       end
     end
