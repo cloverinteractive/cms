@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.14'
 
 gem 'will_paginate'
 gem 'haml-rails'
@@ -17,21 +17,28 @@ gem 'symbolize'
 gem 'friendly_id', '~> 4.0.1'
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'debugger'
   gem 'quiet_assets'
   gem 'bullet'
   gem 'pry-rails'
+  gem 'rails_best_practices'
 end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier',     '>= 1.0.3'
+  gem 'therubyracer'
   gem 'compass-rails'
   gem 'fancybox-rails'
  end
 
 group :development, :test do
-  gem "rspec-rails",  "~> 2.6"
+  gem 'rspec-rails'
+  gem 'single_test'
+  gem 'launchy'
 end
 
 group :test do
@@ -39,6 +46,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara-webkit'
   gem 'mocha', :require => false
+  gem 'simplecov'
 end
 
 platforms :ruby do
@@ -48,20 +56,5 @@ platforms :ruby do
 
   group :production do
     gem 'mysql2'
-  end
-end
-
-platforms :jruby do
-  gem 'activerecord-jdbc-adapter'
-  gem 'jruby-openssl'
-  gem 'trinidad'
-  gem 'ffi-ncurses'
-
-  group :test, :development do
-    gem 'jdbc-sqlite3'
-  end
-
-  group :production do
-    gem 'jdbc-mysql', :require => false
   end
 end
