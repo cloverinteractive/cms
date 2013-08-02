@@ -18,4 +18,5 @@ public/assets
 Thumbs.db
 .bundle
 bin/
+coverage/*
 config/vhost.conf

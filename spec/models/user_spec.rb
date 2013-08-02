@@ -1,33 +1,34 @@
 require 'spec_helper'
 
 describe User do
-  before :each do
-    @user = Factory.create :user
-  end
+  let( :user ) { create :user }
 
   describe "email" do
     it "must be unique" do
-      user = Factory.build :user, :email => @user.email
-      user.should be_invalid
+      user.should be_persisted
+
+      new_user = build :user, email: user.email
+      new_user.should be_invalid
     end
 
     it "must have proper format" do
-      user =  Factory.build :user
+      new_user =  build :user
+
       %w/invalid_email in@va@lid invalit@..@/.each do |invalid_email|
-        user.email = invalid_email
-        user.should be_invalid
+        new_user.email = invalid_email
+        new_user.should be_invalid
       end
     end
   end
 
   describe "username" do
     it "must be present" do
-      user = Factory.build :user, :username => ''
+      user = build :user, username: nil
       user.should be_invalid
     end
 
     it "must be properly formatted" do
-      user = Factory.build :user, :username => ''
+      user = build :user, username: nil
 
       %w/&*)@user tes!@@k ASc&#))/.each do |invalid_username|
         user.username = invalid_username

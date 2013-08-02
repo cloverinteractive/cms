@@ -9,7 +9,7 @@ FactoryGirl.define do
 
   factory :user do
     username  'user'
-    email     { Factory.next :email }
+    email     { generate :email }
     password  'password'
     password_confirmation 'password'
   end
@@ -22,7 +22,7 @@ FactoryGirl.define do
   end
 
   factory :section do
-    name  { Factory.next :name }
+    name  { generate :name }
   end
 
   factory :setting do

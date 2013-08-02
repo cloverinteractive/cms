@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.14'
+gem 'pg'
 
 gem 'bootstrap-will_paginate'
 gem 'haml-rails'
@@ -46,18 +47,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails', '1.7.0'
+  gem 'factory_girl_rails'
   gem 'capybara-webkit'
-  gem 'mocha', :require => false
   gem 'simplecov'
-end
-
-platforms :ruby do
-  group :test, :development do
-    gem 'sqlite3'
-  end
-
-  group :production do
-    gem 'mysql2'
-  end
 end
