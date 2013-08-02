@@ -11,5 +11,7 @@
       %th= t 'common.fields.created_at'
       %th= t 'common.fields.updated_at'
       %th= t 'common.messages.options'
-  %tbody= render :partial => 'section', :collection => @sections
+  %tbody
+    = render @sections
+
 = will_paginate @sections

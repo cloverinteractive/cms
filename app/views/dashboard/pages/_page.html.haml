@@ -4,5 +4,5 @@
   %td= l page.created_at, :format => :short
   %td= l page.updated_at, :format => :short
   %td
-    = link_to t('links.edit'), edit_dashboard_page_path( page ),  :class    => 'icon edit'
-    = link_to t('links.destroy'), dashboard_page_path( page ),    :confirm  => t('common.messages.are_you_sure'), :method => :delete, :class => 'icon delete'
+    = link_to t('links.edit'), edit_dashboard_page_path( page.id ),  :class    => 'icon edit'
+    = link_to t('links.destroy'), dashboard_page_path( page.id ),    :confirm  => t('common.messages.are_you_sure'), :method => :delete, :class => 'icon delete'

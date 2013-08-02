@@ -6,7 +6,7 @@ class Dashboard::SectionsController < ApplicationController
 
   # GET /sections
   def index
-    @sections = Section.page params[:page]
+    @sections = Section.includes( :main_section ).page params[:page]
   end
 
   # GET /sections/1

@@ -4,6 +4,6 @@
   %td= l section.created_at, :format => :short
   %td= l section.updated_at, :format => :short
   %td
-    = link_to t('links.edit'), edit_dashboard_section_path(section), :class => 'icon edit'
-    = link_to t('links.destroy'), dashboard_section_path(section), :confirm => t('common.messages.are_you_sure'), :method => :delete, :class => 'icon delete'
+    = link_to t('links.edit'), edit_dashboard_section_path( section.id ), :class => 'icon edit'
+    = link_to t('links.destroy'), dashboard_section_path( section.id ), :confirm => t('common.messages.are_you_sure'), :method => :delete, :class => 'icon delete'
 
