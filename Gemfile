@@ -42,7 +42,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'single_test'
   gem 'launchy'
-  gem 'evergreen', :require => 'evergreen/rails'
 end
 
 group :test do
