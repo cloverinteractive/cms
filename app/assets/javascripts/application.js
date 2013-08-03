@@ -7,5 +7,4 @@
 //= require jquery.easing
 //= require loopedslider
 //= require bootstrap
-//= require markdown_editor
 //= require_tree .
