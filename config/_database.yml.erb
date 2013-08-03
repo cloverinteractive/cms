@@ -1,0 +1,15 @@
+defaults: &defaults
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  host: localhost
+  username: cms
+  min_messages: warning
+
+test:
+  <<: *defaults
+  database: cms_test
+
+<%= Rails.env %>:
+  <<: *defaults
+  database: cms_<%= Rails.env %>
