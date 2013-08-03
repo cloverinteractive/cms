@@ -1,5 +1,5 @@
 #login_form
-  = form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
+  = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
     %fieldset
       = f.label :login
       = f.text_field :login
@@ -13,4 +13,4 @@
       = f.submit t('devise.forms.sign_in')
 
 .more_options
-  = render :partial => "devise/shared/links"
+  = render partial: "devise/shared/links"

@@ -2,7 +2,7 @@ class Setting < ActiveRecord::Base
   validates_presence_of  :name, :value
   validates_uniqueness_of :name
 
-  validates_format_of :name, :with => /^[a-z0-9_]+$/
+  validates_format_of :name, with: /^[a-z0-9_]+$/
   attr_accessible :name, :value, :description
 
   attr_accessible :name, :value, :description, :destroyable

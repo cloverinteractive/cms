@@ -6,18 +6,18 @@
     = stylesheet_link_tag :application, :clover
     = yield :head
     = csrf_meta_tag
-  %body{ :class => ( @page.present? && @page.home_page ? '' : 'section' ) }
+  %body{ class: ( @page.present? && @page.home_page ? '' : 'section' ) }
     #wrapper
-      = render :partial => 'layouts/themes/clover/top'
-      = render :partial => 'layouts/themes/clover/banner', :object => @page
+      = render partial: 'layouts/themes/clover/top'
+      = render partial: 'layouts/themes/clover/banner', object: @page
 
       #mid
         - if @page.present? && @page.home_page?
           #content= yield
-          = render :partial =>'layouts/themes/clover/sidebar', :object => @page, :locals => { :section => @section }
+          = render partial:'layouts/themes/clover/sidebar', object: @page, locals: { section: @section }
         - elsif @page.present?
           #imid
-            = render :partial => 'layouts/themes/clover/sidebar', :object => @page, :locals => { :section => @section }
+            = render partial: 'layouts/themes/clover/sidebar', object: @page, locals: { section: @section }
             #content= yield
 
-      = render :partial => 'layouts/themes/clover/bottom'
+      = render partial: 'layouts/themes/clover/bottom'

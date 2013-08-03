@@ -118,7 +118,7 @@ describe Dashboard::SettingsController do
         setting.destroyable = false
         setting.save!
 
-        expect { delete :destroy, :id => setting }.to_not change { Setting.count }
+        expect { delete :destroy, id: setting }.to_not change { Setting.count }
       end
     end
   end

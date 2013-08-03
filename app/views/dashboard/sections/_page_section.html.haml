@@ -1,15 +1,15 @@
-= form_for [ :dashboard, page_section ], :validate => true do |f|
+= form_for [ :dashboard, page_section ], validate: true do |f|
   .columns
     .half
-      %label{ :for => :section_name }
+      %label{ for: :section_name }
         = t 'activerecord.models.section'
         %small= t 'dashboard.sections.descriptions.name'
       = f.text_field  :name
 
-      %label{ :for => :main_section_id }
+      %label{ for: :main_section_id }
         = t 'activerecord.attributes.section.main_section'
         %small= t 'dashboard.sections.descriptions.main_section'
-      = f.select :main_section_id, main_sections_collection(page_section.name), :include_blank => true
+      = f.select :main_section_id, main_sections_collection(page_section.name), include_blank: true
 
       %button#submit= t 'common.forms.submit'
 

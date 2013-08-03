@@ -1,4 +1,4 @@
 #flash
   - flash.each do |(status, message)|
     - css_class = (status == :alert) ? 'error' : status.to_s
-    = content_tag :div, flash[status], :class => css_class
+    = content_tag :div, flash[status], class: css_class

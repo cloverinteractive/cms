@@ -67,7 +67,7 @@ describe Dashboard::PagesController do
     describe "POST create" do
       let( :page_attr ) { attributes_for :page, name: 'new page', section_id: section.id }
 
-      before { post :create, :page => page_attr }
+      before { post :create, page: page_attr }
 
       it "should redirect to index" do
         response.should redirect_to( dashboard_pages_path )
@@ -79,14 +79,14 @@ describe Dashboard::PagesController do
       end
 
       it "should render new if anything goes wrong" do
-        post :create, :page => page_attr.merge( name: page.name )
+        post :create, page: page_attr.merge( name: page.name )
         response.should render_template( :new )
       end
     end
 
     describe "PUT update" do
       before :each do
-        put :update, :id => page, page: { name: 'batman' }
+        put :update, id: page, page: { name: 'batman' }
       end
 
       it "should redirect to index" do

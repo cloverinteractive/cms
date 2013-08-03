@@ -1,17 +1,17 @@
 !!!5
 %html
   %head
-    %meta{ :charset => 'utf-8' }
+    %meta{ charset: 'utf-8' }
     = yield :meta
     %title= content_for?(:title) ? yield(:title) : 'Simple Blog'
     = stylesheet_link_tag 'application', 'simple_blog'
   %body
-    = render :partial => 'layouts/themes/simple_blog/nav'
+    = render partial: 'layouts/themes/simple_blog/nav'
     #wrapper
-      = render :partial => 'layouts/application/flashes'
+      = render partial: 'layouts/application/flashes'
       #content_wrapper
         #content= yield
-        #sidebar= render :partial => 'layouts/themes/simple_blog/sidebar', :locals => { :section => @section }
+        #sidebar= render partial: 'layouts/themes/simple_blog/sidebar', locals: { section: @section }
         .clear
-        #footer= render :partial => 'layouts/themes/simple_blog/footer', :locals => { :section => @section }
+        #footer= render partial: 'layouts/themes/simple_blog/footer', locals: { section: @section }
 

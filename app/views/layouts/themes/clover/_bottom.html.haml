@@ -28,11 +28,11 @@
   #newsletter_box.b360
     %h2 Subscribete al newsletter
 
-    / - form_for EmailList.new, :url => "/email_lists/add_to_list", :html => { :id => "newsletter", :class => "forms_footer" } do |f|
-    /  %label= f.text_field :email, :value => "Email", :class => "input_text"
+    / - form_for EmailList.new, url: "/email_lists/add_to_list", html: { id: "newsletter", class: "forms_footer" } do |f|
+    /  %label= f.text_field :email, value: "Email", class: "input_text"
     /  %label.right
-    /    %a.button1{ :href => "javascript:void(null);" }
-    /      %span{ :onclick => "$('#newsletter')[0].submit();" } Subscribir
+    /    %a.button1{ href: "javascript:void(null);" }
+    /      %span{ onclick: "$('#newsletter')[0].submit();" } Subscribir
 
 #footer2
 

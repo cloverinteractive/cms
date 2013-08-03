@@ -24,7 +24,7 @@
           img.src = response.thumbnail;
           $("#images_list").append(img);
           $(img).click(function(){
-            image_operations({ element: this, title: '#{t 'links.add_item', :item => t('common.fields.image')}', text: '#{t 'common.headers.add_image', :item => t('common.fields.image')}' })
+            image_operations({ element: this, title: '#{t 'links.add_item', item: t('common.fields.image')}', text: '#{t 'common.headers.add_image', item: t('common.fields.image')}' })
           });
         }
       },

@@ -2,7 +2,7 @@ before_script:  "RAILS_ENV=development bundle exec rake db:migrate db:test:prepa
 script:         "bundle exec rake spec"
 rvm:
   - 2.0.0
-  - 1.9.2
+  - 1.9.3
 notifications:
   recipients:
     - enrique@cloverinteractive.com

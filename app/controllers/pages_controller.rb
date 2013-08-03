@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     raise Clover::PageNotFoundError if @page.blank?
 
     if @page.has_contact?
-      @contact_form = render_to_string :partial => 'contact_forms/contact_form', :object => ContactForm.new
+      @contact_form = render_to_string partial: 'contact_forms/contact_form', object: ContactForm.new
     end
   end
 

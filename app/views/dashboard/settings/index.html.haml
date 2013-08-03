@@ -1,10 +1,10 @@
-%h2= t 'common.headers.item_list', :item => t('activerecord.models.setting')
+%h2= t 'common.headers.item_list', item: t('activerecord.models.setting')
 
 %p.info
   %span.bold= t('messages.information') + ':'
   = t '.instructions'
 
-%table.tabular{ :cellpadding => 0, :cellspacing => 0 }
+%table.tabular{ cellpadding: 0, cellspacing: 0 }
   %thead
     %tr
       %th= t 'common.fields.name'
@@ -13,5 +13,5 @@
       %th= t 'common.fields.updated_at'
       %th= t 'common.messages.options'
   %tbody
-    = render :partial => 'setting', :collection => @settings
+    = render partial: 'setting', collection: @settings
 = will_paginate @settings

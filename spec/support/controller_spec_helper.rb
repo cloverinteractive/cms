@@ -6,5 +6,5 @@ module ControllerSpecHelpers
 end
 
 RSpec.configure do |config|
-  config.include ControllerSpecHelpers, :type => :controller
+  config.include ControllerSpecHelpers, type: :controller
 end

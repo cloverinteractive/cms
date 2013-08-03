@@ -1,2 +1,2 @@
-= tabs_tag :open_tabs => { :id => "sub_menu", :class => "sub_nav" } do |tab|
-  = tab.list_users        t('links.item_list', :item => t('activerecord.models.user')), dashboard_users_path
+= tabs_tag open_tabs: { id: "sub_menu", class: "sub_nav" } do |tab|
+  = tab.list_users        t('links.item_list', item: t('activerecord.models.user')), dashboard_users_path

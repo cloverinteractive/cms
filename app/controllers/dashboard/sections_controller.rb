@@ -1,8 +1,8 @@
 class Dashboard::SectionsController < ApplicationController
-  before_filter :set_section, :only => [ :edit, :update, :destroy ]
+  before_filter :set_section, only: [ :edit, :update, :destroy ]
 
-  set_tab :list_sections, :only => :index
-  set_tab :new_section,   :only => :new
+  set_tab :list_sections, only: :index
+  set_tab :new_section,   only: :new
 
   # GET /sections
   def index

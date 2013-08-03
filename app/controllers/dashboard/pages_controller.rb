@@ -1,8 +1,8 @@
 class Dashboard::PagesController < ApplicationController
-  before_filter :set_page, :only => [ :edit, :update, :destroy ]
+  before_filter :set_page, only: [ :edit, :update, :destroy ]
 
-  set_tab :list_pages, :only => :index
-  set_tab :new_page, :only => :new
+  set_tab :list_pages, only: :index
+  set_tab :new_page, only: :new
 
   # GET /pages
   def index

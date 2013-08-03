@@ -1,8 +1,8 @@
 class Dashboard::SettingsController < ApplicationController
-  before_filter :set_setting, :only => [ :edit, :update, :destroy ]
+  before_filter :set_setting, only: [ :edit, :update, :destroy ]
 
-  set_tab :list_settings, :only => :index
-  set_tab :new_setting,   :only => :new
+  set_tab :list_settings, only: :index
+  set_tab :new_setting,   only: :new
 
   def index
     @settings = Setting.page params[:page]

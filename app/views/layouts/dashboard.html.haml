@@ -1,5 +1,5 @@
 - selected_tab = ( controller_name == 'registrations' ) ? 'users' : controller_name
-= render 'layouts/dashboard/head', :selected_tab => selected_tab
+= render 'layouts/dashboard/head', selected_tab: selected_tab
 = render 'layouts/dashboard/navigation'
 = render 'layouts/dashboard/top'
 
@@ -17,7 +17,7 @@
       #nav_wrap= yield :nav_wrap
       #content_wrap
         #content
-          = render :partial => 'layouts/dashboard/flashes'
+          = render partial: 'layouts/dashboard/flashes'
           .module
             %h2.title= content_for?(:module_title) ? yield(:module_title) : t( "activerecord.models.#{ selected_tab.singularize }" )
             .module_body= yield

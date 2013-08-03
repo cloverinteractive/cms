@@ -14,7 +14,7 @@ set :scm_verbose, true
 
 role :web, "#{subdomain}.#{domain}"
 role :app, "#{subdomain}.#{domain}"
-role :db,  "#{subdomain}.#{domain}", :primary => true
+role :db,  "#{subdomain}.#{domain}", primary: true
 
 set :deploy_to, "/home/#{user}/rails_apps/#{subdomain}.#{domain}/#{application}"
 
@@ -23,7 +23,7 @@ require 'config/capistrano_templates'
 namespace :deploy do
   task :start do ; end
   task :stop  do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
+  task :restart, roles: :app, except: { no_release: true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 

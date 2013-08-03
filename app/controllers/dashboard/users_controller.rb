@@ -1,5 +1,5 @@
 class Dashboard::UsersController < ApplicationController
-  set_tab :list_users, :only => :index
+  set_tab :list_users, only: :index
 
   def index
     @users = User.order('username').page params[:page]
@@ -10,7 +10,7 @@ class Dashboard::UsersController < ApplicationController
 
     if @user.delete
       flash[:success] = t('messages.deleted_successfully')
-      redirect_to :action => :index
+      redirect_to action: :index
     end
   end
 end

@@ -1,5 +1,5 @@
 #login_form
-  = form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post } do |f|
+  = form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :post } do |f|
     %fieldset
       = devise_error_messages!
 
@@ -8,4 +8,4 @@
       = f.submit t('devise.forms.reset_password')
 
 .more_options
-  = render :partial => "devise/shared/links"
+  = render partial: "devise/shared/links"

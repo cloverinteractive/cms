@@ -1,5 +1,5 @@
-%h2= t 'links.edit_item', :item => t('activerecord.models.user')
-= form_for resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put } do |f|
+%h2= t 'links.edit_item', item: t('activerecord.models.user')
+= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f|
   .columns
     .half
       = devise_error_messages!
@@ -26,6 +26,6 @@
         %h3= t 'common.headers.cancel_account'
         %p
           = t('common.messages.unhappy')
-          = link_to t('common.headers.cancel_account'), registration_path(resource_name), :confirm => t('common.messages.are_you_sure'), :method => :delete
+          = link_to t('common.headers.cancel_account'), registration_path(resource_name), confirm: t('common.messages.are_you_sure'), method: :delete
 - content_for :sub_nav do
-  = render :partial => 'layouts/dashboard/nav/users'
+  = render partial: 'layouts/dashboard/nav/users'

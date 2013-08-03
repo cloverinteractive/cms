@@ -1,9 +1,9 @@
-%h2= t 'common.headers.item_list', :item => t('activerecord.models.section')
+%h2= t 'common.headers.item_list', item: t('activerecord.models.section')
 %p.info
   %span.bold= t('messages.information') + ':'
   = t '.information'
 
-%table.tabular{ :cellpading => 0, :cellspacing => 0 }
+%table.tabular{ cellpading: 0, cellspacing: 0 }
   %thead
     %tr
       %th= t 'activerecord.attributes.section.name'

@@ -1,9 +1,9 @@
 #tabs
   %ul
-    %li= link_to t('links.item_details', :item => t('activerecord.models.page')), '#tabs-1'
-    %li= link_to t('links.item_keywords', :item => t('activerecord.models.page')), '#tabs-2'
+    %li= link_to t('links.item_details', item: t('activerecord.models.page')), '#tabs-1'
+    %li= link_to t('links.item_keywords', item: t('activerecord.models.page')), '#tabs-2'
   #tabs-1
-    = render :partial => 'page_editor', :object => @page
+    = render partial: 'page_editor', object: @page
   #tabs-2
-    = render :partial => 'shared/keywords', :locals => { :resource_keywords => @page.keywords.map(&:name) }
+    = render partial: 'shared/keywords', locals: { resource_keywords: @page.keywords.map(&:name) }
     .clear
