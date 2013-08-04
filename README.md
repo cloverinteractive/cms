@@ -1,4 +1,4 @@
-# Clover CMS [![Build Status](http://travis-ci.org/cloverinteractive/cms.png)](http://travis-ci.org/cloverinteractive/clovercms)
+# Clover CMS [![Build Status](http://travis-ci.org/cloverinteractive/cms.png)](http://travis-ci.org/cloverinteractive/cms)
 
 __A dead simple content management system for Rails 3.2.14__
 
@@ -29,18 +29,8 @@ To install and run in development:
 
 We currently test with:
 
-* ruby 1.9.2
-* ruby 1.8.7
-* ree
-
-### JRuby
-
-We take JRuby into consideration, and our Gemfile works nice with its platforms, but since we can only version one instance, we don't build against it. However you can use `clovercms` with JRuby by doing the following:
-
-0. `rm -f Gemfile.lock`
-1. `jruby -S bundle install`
-
-## Contribute
+* ruby 2.0.0
+* ruby 1.9.3
 
 Feel free to submit a pull request and don't forget to add your name to the list below.
 
