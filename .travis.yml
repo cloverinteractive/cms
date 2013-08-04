@@ -1,5 +1,5 @@
 before_script:
-  - sudo -u postgres createuser cms -d
+  - sudo -u postgres createuser cms -dSR
   - RAILS_ENV=development bundle exec rake config:generate db:create
   - 'sh -e /etc/init.d/xvfb start'
 script:

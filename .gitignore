@@ -9,3 +9,4 @@ public/system
 tags
 coverage
 bin/
+config/initializers/secret_token.rb
