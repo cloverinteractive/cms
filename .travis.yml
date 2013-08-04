@@ -1,6 +1,6 @@
 before_script:
-  - RAILS_ENV=development bundle exec rake config:generate
-  - psql -c 'create database cms_test;' -U postgres
+  - sudo -u postgres createuser cms -d
+  - RAILS_ENV=development bundle exec rake config:generate db:create
   - 'sh -e /etc/init.d/xvfb start'
 script:
   - 'DISPLAY=:99.0 bundle exec rake spec'
