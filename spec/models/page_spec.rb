@@ -26,9 +26,4 @@ describe Page do
     page = build :page, name: 'test_name', content: 'Test content', section: nil
     page.should be_invalid
   end
-
-  it "should accept keywords" do
-    page.keyword_list = 'this, are, some, keywords'
-    page.should be_valid
-  end
 end

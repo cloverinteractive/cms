@@ -1,7 +1,10 @@
 before_script:
+  - sudo apt-get install python-pip
+  - sudo pip install pygments
   - sudo -u postgres createuser cms -dSR
-  - RAILS_ENV=development bundle exec rake config:generate db:create:all db:migrate
+  - RAILS_ENV=development bundle exec rake config:generate
   - 'sh -e /etc/init.d/xvfb start'
+  - bundle exec rake db:migrate db:test:prepare
 script:
   - 'DISPLAY=:99.0 bundle exec rake spec'
 rvm:

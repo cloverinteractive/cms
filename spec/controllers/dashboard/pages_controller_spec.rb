@@ -75,7 +75,7 @@ describe Dashboard::PagesController do
 
       it "should create page" do
         assigns( :page ).should be_kind_of( Page )
-        Page.count.should == 2
+        Page.count.should eql( 2 )
       end
 
       it "should render new if anything goes wrong" do
@@ -90,7 +90,7 @@ describe Dashboard::PagesController do
       end
 
       it "should redirect to index" do
-        response.should redirect_to( dashboard_pages_path )
+        response.should redirect_to( edit_dashboard_page_path( page.reload ) )
       end
 
       it "should update @page" do
