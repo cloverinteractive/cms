@@ -2,7 +2,7 @@ before_script:
   - sudo apt-get install python-pip
   - sudo pip install pygments
   - sudo -u postgres createuser cms -dSR
-  - RAILS_ENV=development bundle exec rake config:generate
+  - RAILS_ENV=development bundle exec rake db:create:all config:generate
   - 'sh -e /etc/init.d/xvfb start'
   - bundle exec rake db:migrate db:test:prepare
 script:
