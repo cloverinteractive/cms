@@ -1,0 +1,17 @@
+= simple_form_for [ :dashboard, page ] do |f|
+  #page_content
+    = f.input :name, placeholder: t('common.descriptions.url.item_name', item: Page.model_name.downcase )
+    = f.pagedown_editor :content
+
+    = f.label :section do
+      = t 'activerecord.attributes.page.section'
+      %small= t 'dashboard.page.descriptions.section'
+
+    = f.select  :section_id, all_sections_collection
+
+    .buttonset
+      = f.input :home_page,   input_html: { class: :home_page }
+      = f.input :has_contact, input_html: { class: :contact_form }
+      = f.input :published,   input_html: { class: :published }
+
+    = f.submit t( 'common.forms.submit' )

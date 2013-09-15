@@ -35,57 +35,6 @@ $("#documents a").each(function(){
   });
 }
 
-// Keywords box functions
-
-function existing_keywords()
-{
-  $('#keywords option').each(function(){
-    $(this).dblclick(function(){
-      delete_confirmation_dialog({
-        element: this,
-        title: 'Delete tag from tag list',
-        text: 'Are you sure you want to delete ' + this.value + ' from your tag list?',
-        onsuccess: 'keyword_list'
-      });
-    });
-  });
-}
-
-function add_keywords()
-{
-  $('#keyword_button').click(function(){
-    $('#keyword_input').html(function() {
-       if (this.value != '') {
-        $.each(this.value.split(/\s?,\s?/), function(index, value) {
-          $('#keywords').append('<option class="tag">' + this + '</option>');
-          $("#keywords").children(":last").dblclick (function() {
-            delete_confirmation_dialog({
-              element:     this,
-              title:       'Delete tag from tag list',
-              text:       'Are you sure you want to delete ' + value + ' from your tag list?',
-              onsuccess:   'keyword_list'
-            });
-          });
-        });
-        keyword_list();
-        this.value = '';
-       }
-   });
-  });
-}
-
-function keyword_list()
-{
-  var keywords = "";
-  $("#keywords option").each(function(){
-    if ( keywords == "")
-      keywords = this.value;
-    else
-      keywords = keywords + ", " + this.value;
-  });
-  $("#final_keywords_list").val(keywords);
-}
-
 // Dialog box functions
 
 function delete_confirmation_dialog( params ) {
@@ -147,32 +96,7 @@ function image_operations( params ) {
   });
 }
 
-// nested models
 $(function() {
-  $('form a.add_child').click(function() {
-    var association = $(this).attr('data-association');
-    var template = $('#' + association + '_fields_template').html();
-    var regexp = new RegExp('new_' + association, 'g');
-    var new_id = new Date().getTime();
-
-    $(this).parent().before(template.replace(regexp, new_id));
-    return false;
-  });
-
-  $('form a.remove_child').live('click', function() {
-    var hidden_field = $(this).prev('input[type=hidden]')[0];
-    if(hidden_field) {
-      hidden_field.value = '1';
-    }
-    $(this).parents('.fields').hide();
-    return false;
-  });
+  $('#tabs').tabs();
+  add_images();
 });
-
-// button methods
-function submit_button()
-{
-  $('.submit').button( { icons: { primary: 'ui-icon-circle-check' } } ).click(function() {
-    $('.form').submit();
-   });
-}

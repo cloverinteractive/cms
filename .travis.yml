@@ -1,6 +1,6 @@
 before_script:
   - sudo -u postgres createuser cms -dSR
-  - RAILS_ENV=development bundle exec rake config:generate db:create db:migrate
+  - RAILS_ENV=development bundle exec rake config:generate db:create:all db:migrate
   - 'sh -e /etc/init.d/xvfb start'
 script:
   - 'DISPLAY=:99.0 bundle exec rake spec'

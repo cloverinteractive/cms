@@ -7,4 +7,5 @@
 //= require jquery.easing
 //= require loopedslider
 //= require bootstrap
+//= require bootstrap_pagedown
 //= require_tree .

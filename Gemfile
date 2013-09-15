@@ -9,7 +9,6 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'acts-as-taggable-on'
 gem 'tabs_on_rails'
 gem 'jquery-rails'
 gem 'simple_form'
@@ -17,6 +16,9 @@ gem 'capistrano'
 gem 'mime-types', :require => 'mime/types'
 gem 'symbolize'
 gem 'friendly_id', '~> 4.0.1'
+gem 'redcarpet', '2.2.2'
+gem 'pygments.rb', '0.4.2'
+gem 'mail_form'
 
 group :development do
   gem 'better_errors'
@@ -35,6 +37,7 @@ group :assets do
   gem 'therubyracer', platforms: :ruby
   gem 'compass-rails'
   gem 'bootstrap-sass'
+  gem 'bootstrap_pagedown'
   gem 'fancybox-rails'
  end
 

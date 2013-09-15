@@ -1,14 +1,11 @@
 #tabs
   %ul
-    %li= link_to t('links.item_details',  item: t('activerecord.models.page')), '#tabs-1'
-    %li= link_to t('links.item_keywords', item: t('activerecord.models.page')), '#tabs-2'
-    %li= link_to t('links.item_assets',   item: t('activerecord.models.page')), '#tabs-3'
-  #tabs-1
-    = render partial: 'page_editor', object: @page
-  #tabs-2
-    = render 'shared/keywords', resource_keywords: @page.keywords.map(&:name)
-    .spacer
-  #tabs-3
+    %li= link_to t('links.item_details',  item: Page.model_name ), '#page-editor'
+    %li= link_to t('links.item_assets',   item: Page.model_name ), '#assets'
+
+  #page-editor= render 'form', page: @page
+
+  #assets
     .splitcontentleft
       #images_list
         - @page.assets.each do |asset|
@@ -17,7 +14,3 @@
     .splitcontentright
     = render 'shared/uploadify', object: @page
     .spacer
-:javascript
-  $(function() {
-    add_images();
-  })
