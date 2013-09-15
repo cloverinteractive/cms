@@ -1,4 +1,4 @@
-%h2= t 'common.headers.item_list', item: t('activerecord.models.setting')
+%h2= t 'common.headers.item_list', item: Setting.model_name
 
 %p.info
   %span.bold= t('messages.information') + ':'
@@ -13,5 +13,6 @@
       %th= t 'common.fields.updated_at'
       %th= t 'common.messages.options'
   %tbody
-    = render partial: 'setting', collection: @settings
+    = render @settings
+
 = will_paginate @settings

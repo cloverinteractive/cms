@@ -1,9 +1,8 @@
 class Setting < ActiveRecord::Base
-  validates_presence_of  :name, :value
-  validates_uniqueness_of :name
+  validates :name, :value, presence: true
+  validates :name, uniqueness: true
 
   validates_format_of :name, with: /^[a-z0-9_]+$/
-  attr_accessible :name, :value, :description
 
   attr_accessible :name, :value, :description, :destroyable
 
@@ -12,16 +11,10 @@ class Setting < ActiveRecord::Base
     false
   end
 
-  def delete!
-    return super if destroyable?
-    false
-  end
-
   def self.get_site_settings
-    site = {}
-    Setting.select('name, value').each do |setting|
+    Setting.select('name, value').inject( {} ) do |site, setting|
       site[setting.name.to_sym] = setting.value
+      site
     end
-    site
   end
 end

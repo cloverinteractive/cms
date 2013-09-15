@@ -10,4 +10,6 @@ class Section < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   attr_accessible :name, :main_section_id
+
+  delegate :name, to: :main_section, prefix: true, allow_nil: true
 end

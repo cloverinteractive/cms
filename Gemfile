@@ -39,6 +39,7 @@ group :assets do
   gem 'bootstrap-sass'
   gem 'bootstrap_pagedown'
   gem 'fancybox-rails'
+  gem 'turbo-sprockets-rails3'
  end
 
 group :development, :test do

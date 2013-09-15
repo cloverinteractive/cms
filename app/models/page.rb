@@ -15,6 +15,8 @@ class Page < ActiveRecord::Base
 
   scope :published, -> { where published: true }
 
+  delegate :name, to: :section, prefix: true
+
   def self.home_page
     where( home_page: true ).first
   end
@@ -24,7 +26,7 @@ class Page < ActiveRecord::Base
     return unless home_page?
 
     Page.where( home_page: true ).find_each do |page|
-      page.update_attributes( home_page: false ) if page != self
+      page.update_attributes!( home_page: false ) unless page === self
     end
   end
 end

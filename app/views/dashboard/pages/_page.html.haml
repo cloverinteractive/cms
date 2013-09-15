@@ -1,6 +1,6 @@
 %tr{ class: cycle(:odd, :even) }
   %td= link_to page.name, edit_dashboard_page_path( page )
-  %td= page.section.name
+  %td= page.section_name
   %td= l page.created_at, format: :short
   %td= l page.updated_at, format: :short
   %td
