@@ -1,4 +1,4 @@
-# Clover CMS [![Build Status](http://travis-ci.org/cloverinteractive/cms.png)](http://travis-ci.org/cloverinteractive/cms)
+# Clover CMS [![Build Status](https://travis-ci.org/cloverinteractive/cms.png?branch=master)](https://travis-ci.org/cloverinteractive/cms)
 
 __A dead simple content management system for Rails 3.2.14__
 
