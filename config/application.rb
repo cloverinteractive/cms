@@ -44,12 +44,12 @@ module Clover
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
+    config.filter_parameters += [:password, :password_confirmation]
 
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.assets.precompile += %w( clover.css tjruby.css dashboard.css simple_blog.css sessions.css jquery-ui.css )
+    config.assets.precompile += %w( clover.css tjruby.css dashboard.css simple_blog.css sessions.css )
     config.assets.precompile += %w( uploadify/uploadify.min.js uploadify/swfobject.js )
 
     # Version of your assets, change this if you want to expire all your assets
