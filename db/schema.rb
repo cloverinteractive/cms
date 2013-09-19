@@ -13,18 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120918223422) do
 
-  create_table "assets", :force => true do |t|
-    t.string  "description"
-    t.string  "asset_file_name"
-    t.string  "asset_content_type"
-    t.integer "asset_file_size"
-    t.integer "attachable_id"
-    t.string  "attachable_type"
-  end
-
-  add_index "assets", ["asset_content_type"], :name => "index_assets_on_asset_content_type"
-  add_index "assets", ["attachable_id", "attachable_type"], :name => "index_assets_on_attachable_id_and_attachable_type"
-
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.text     "content"

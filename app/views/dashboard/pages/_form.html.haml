@@ -1,6 +1,7 @@
 = simple_form_for [ :dashboard, page ] do |f|
   #page_content
     = f.input :name, placeholder: t('common.descriptions.url.item_name', item: Page.model_name.downcase )
+
     = f.pagedown_editor :content
 
     = f.label :section do

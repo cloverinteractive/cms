@@ -1,5 +1,1 @@
-#tabs
-  %ul
-    %li= link_to t('links.item_details',  item: Page.model_name ), '#page-editor'
-
-  #page-editor= render 'form', page: @page
+= render 'form', page: @page

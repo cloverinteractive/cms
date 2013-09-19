@@ -1,7 +1,6 @@
 class Page < ActiveRecord::Base
   extend FriendlyId
 
-  has_many :assets, as: :attachable
   belongs_to :section
 
   before_save :check_home_page
