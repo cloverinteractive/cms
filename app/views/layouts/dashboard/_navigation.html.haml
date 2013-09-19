@@ -1,6 +1,3 @@
-- content_for :head do
-  = javascript_include_tag 'uploadify/uploadify.min', 'uploadify/swfobject'
-
 - content_for :nav_wrap do
   %ul#nav
     %li#sections_menu_link=   link_to Section.model_name.pluralize, dashboard_sections_path

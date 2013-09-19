@@ -23,7 +23,7 @@ module Clover
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    config.autoload_paths += %W(#{config.root}/app/middleware #{config.root}/extras #{config.root}/lib/extensions)
+    config.autoload_paths += %W( #{config.root}/lib/extensions )
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -50,7 +50,6 @@ module Clover
     config.assets.enabled = true
 
     config.assets.precompile += %w( clover.css tjruby.css dashboard.css simple_blog.css sessions.css )
-    config.assets.precompile += %w( uploadify/uploadify.min.js uploadify/swfobject.js )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
