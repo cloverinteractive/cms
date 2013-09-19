@@ -8,5 +8,4 @@ public/system
 .sass-cache
 tags
 coverage
-bin/
 config/initializers/secret_token.rb
