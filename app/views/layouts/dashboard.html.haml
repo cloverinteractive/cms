@@ -19,7 +19,7 @@
         #content
           = render partial: 'layouts/dashboard/flashes'
           .module
-            %h2.title= content_for?(:module_title) ? yield(:module_title) : t( "activerecord.models.#{ selected_tab.singularize }" )
+            %h2.title= content_for?(:module_title) ? yield(:module_title) : selected_tab.singularize.classify.constantize.model_name.human
             .module_body= yield
       #footer_wrap
         #footer= content_for?(:footer) ? yield(:footer) : 'CloverInteractive'

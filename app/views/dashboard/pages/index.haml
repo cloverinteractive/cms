@@ -1,4 +1,4 @@
-%h2= t 'common.headers.item_list', item: Page.model_name.pluralize
+%h2= t 'common.headers.item_list', item: Page.model_name.human( count: 0 )
 
 %p.info
   %span.bold= t('messages.information') + ':'
@@ -8,7 +8,7 @@
   %thead
     %tr
       %th= t 'common.fields.name'
-      %th= Section.model_name
+      %th= Section.model_name.human
       %th= t 'common.fields.created_at'
       %th= t 'common.fields.updated_at'
       %th= t 'common.messages.options'

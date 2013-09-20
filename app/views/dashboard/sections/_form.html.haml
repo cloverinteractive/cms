@@ -2,7 +2,7 @@
   .columns
     .half
       %label{ for: :section_name }
-        = t 'activerecord.models.section'
+        = Section.model_name.human
         %small= t 'dashboard.sections.descriptions.name'
       = f.text_field  :name
 

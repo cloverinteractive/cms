@@ -77,6 +77,7 @@ es:
     item_details:   'Detalles de %{item}'
     item_keywords:  'Palabras clave de %{item}'
     item_assets:    'Recursos de %{item}'
+    item_edit:      'Editar %{item}'
     add_item:       'Agregar %{item}'
     logout:         'salir'
 
@@ -120,12 +121,18 @@ es:
 
   activerecord:
     models:
-      section:  'Sección'
-      page:     'Pagina'
-      article:  'Articulo'
-      user:     'Usuario'
-      role:     'Rol'
-      setting: 'Configuración'
+      section:
+        one: 'Sección'
+        other: 'Secciones'
+      page:
+        one:    'Página'
+        other:  'Páginas'
+      user:
+        one:    'Usuario'
+        other:  'Usuarios'
+      setting:
+        one:    'Configuración'
+        other:  'Configuraciones'
     attributes:
       section:
         name:         'Nombre'

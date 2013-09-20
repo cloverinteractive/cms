@@ -1,8 +1,8 @@
 - content_for :nav_wrap do
   %ul#nav
-    %li#sections_menu_link=   link_to Section.model_name.pluralize, dashboard_sections_path
-    %li#pages_menu_link=      link_to Page.model_name.pluralize,    dashboard_pages_path
-    %li#settings_menu_link=   link_to Setting.model_name.pluralize, dashboard_settings_path
-    %li#users_menu_link=      link_to User.model_name.pluralize,    dashboard_users_path
+    %li#sections_menu_link=   link_to Section.model_name.human(count: 0), dashboard_sections_path
+    %li#pages_menu_link=      link_to Page.model_name.human(count: 0),    dashboard_pages_path
+    %li#settings_menu_link=   link_to Setting.model_name.human(count: 0), dashboard_settings_path
+    %li#users_menu_link=      link_to User.model_name.human(count: 0),    dashboard_users_path
     = yield :nav
   = content_for?( :sub_nav ) ? yield( :sub_nav ) : render( "layouts/dashboard/nav/#{controller_name}" )
