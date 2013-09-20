@@ -1,12 +1,8 @@
 %fieldset
-  = form_for contact_form, as: :contact_form, url: contact_form_path do |contact|
-    = contact.label :recipient
-    = contact.text_field :recipient
-
-    = contact.label :subject
-    = contact.text_field :subject
-
-    = contact.label :body
-    = contact.text_area :body
+  = simple_form_for ContactForm.new, as: :contact_form, url: contact_form_path do |contact|
+    = contact.input :name
+    = contact.input :email
+    = contact.input :subject
+    = contact.input :message, as: :text
 
     = contact.submit :submit
