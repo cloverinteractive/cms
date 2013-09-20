@@ -8,9 +8,7 @@ class Dashboard::UsersController < ApplicationController
   def destroy
     @user = User.find params[:id]
 
-    if @user.delete
-      flash[:success] = t('messages.deleted_successfully')
-      redirect_to action: :index
-    end
+    @user.destroy
+    redirect_to dashboard_users_path
   end
 end

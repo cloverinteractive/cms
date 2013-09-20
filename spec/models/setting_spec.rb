@@ -28,8 +28,4 @@ describe Setting do
       setting.should be_invalid
     end
   end
-
-  it "should not delete non destroyable settings" do
-    theme.delete.should be_false
-  end
 end

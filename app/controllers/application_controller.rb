@@ -21,37 +21,29 @@ class ApplicationController < ActionController::Base
   end
 
   def devise_layout
-    if controller_name == 'registrations'
-      set_tab :edit_user
-      return 'dashboard'
-    end
-
-    'sessions'
+    return 'sessions' unless controller_name === 'registrations'
+    set_tab :edit_user
+    return 'dashboard'
   end
 
   def website_layout
-    return "themes/#{ site[:theme] }/theme" if site[:theme].present?
-    'themes/default/theme'
+    return "themes/#{ site[:theme] || 'default' }/theme"
   end
 
   def dashboard_controller?
-    params[:controller] =~ /^dashboard\/[a-z_]+$/
+    controller_path =~ /^dashboard\/[a-z_]+$/
   end
 
   def guess_layout
-    if dashboard_controller?
-      'dashboard'
-    elsif devise_controller?
-      devise_layout
-    else
-      website_layout
-    end
+    return devise_layout  if devise_controller?
+    return 'dashboard'    if dashboard_controller?
+
+    website_layout
   end
 
   protected
   def unauthorized_access
-    flash[:info] = t 'messages.unauthorized_access'
-    redirect_to new_user_session_path
+    redirect_to new_user_session_path, flash: { info: t('messages.unauthorized_access') }
   end
 
   def page_not_found

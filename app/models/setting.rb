@@ -2,13 +2,12 @@ class Setting < ActiveRecord::Base
   validates :name, :value, presence: true
   validates :name, uniqueness: true
 
-  validates_format_of :name, with: /^[a-z0-9_]+$/
+  validates_format_of :name, with: /\A[a-z0-9_]+\z/i
 
   attr_accessible :name, :value, :description, :destroyable
 
-  def delete
-    return super if destroyable?
-    false
+  def name=(value)
+    self[:name] = value if destroyable?
   end
 
   def self.get_site_settings

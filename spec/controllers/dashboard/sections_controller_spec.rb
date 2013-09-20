@@ -84,25 +84,30 @@ describe Dashboard::SectionsController do
     end
 
     describe "PUT update" do
-      before :each do
-        put :update, id: section, section: { name: 'batman' }
+      before { section.should be_persisted }
+
+      context :update_successful do
+        before { put :update, id: section, section: { name: 'batman' } }
+
+        it "should assign @section" do
+          assigns( :section ).should be_kind_of( Section )
+        end
+
+        it "should update @section" do
+          assigns( :section ).should eql( section )
+        end
+
+        it "should redirect to index" do
+          response.should redirect_to( dashboard_sections_path )
+        end
       end
 
-      it "should assign @section" do
-        assigns( :section ).should be_kind_of( Section )
-      end
 
-      it "should update @section" do
-        assigns( :section ).should eql( section )
-      end
-
-      it "should redirect to index" do
-        response.should redirect_to( dashboard_sections_path )
-      end
-
-      it "should render edit should something go wrong" do
-        put :update, id: section, section: { name: nil }
-        response.should render_template( :edit )
+      context :update_fails do
+        it "should render edit should something go wrong" do
+          put :update, id: section, section: { name: '' }
+          response.should render_template( :edit )
+        end
       end
     end
 

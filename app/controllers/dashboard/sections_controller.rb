@@ -1,5 +1,5 @@
 class Dashboard::SectionsController < ApplicationController
-  before_filter :set_section, only: [ :edit, :update, :destroy ]
+  before_filter :find_section, only: [ :edit, :update, :destroy ]
 
   set_tab :list_sections, only: :index
   set_tab :new_section,   only: :new
@@ -24,8 +24,7 @@ class Dashboard::SectionsController < ApplicationController
     @section = Section.new params[:section]
 
     if @section.save
-      flash[:success] = t 'messages.created_successfully'
-      redirect_to dashboard_sections_path
+      redirect_to dashboard_sections_path, flash: { success: t('messages.created_successfully') }
     else
       render :new
     end
@@ -34,8 +33,7 @@ class Dashboard::SectionsController < ApplicationController
   # PUT /sections/1
   def update
     if @section.update_attributes params[:section]
-      flash[:success] = t 'messages.updated_successfully'
-      redirect_to dashboard_sections_path
+      redirect_to dashboard_sections_path, flash: { success: t('messages.updated_successfully') }
     else
       render :edit
     end
@@ -48,7 +46,7 @@ class Dashboard::SectionsController < ApplicationController
   end
 
   private
-  def set_section
-    @section ||= Section.find params[:id]
+  def find_section
+    @section = Section.find params[:id]
   end
 end

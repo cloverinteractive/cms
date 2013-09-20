@@ -67,6 +67,8 @@ module Clover
       hard_wrap:      true,
       with_toc_data:  true,
     }
+
+    $themes = Dir[ Rails.root.join('app', 'views', 'layouts', 'themes', '**' ) ].map { |dir| File.basename dir }
   end
 end
 

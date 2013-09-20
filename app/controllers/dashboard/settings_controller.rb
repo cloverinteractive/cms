@@ -1,5 +1,5 @@
 class Dashboard::SettingsController < ApplicationController
-  before_filter :set_setting, only: [ :edit, :update, :destroy ]
+  before_filter :find_setting, only: [ :edit, :update, :destroy ]
 
   set_tab :list_settings, only: :index
   set_tab :new_setting,   only: :new
@@ -12,52 +12,35 @@ class Dashboard::SettingsController < ApplicationController
     @setting = Setting.new
   end
 
-  def edit
-    @themes = get_themes if @setting.name == 'theme'
-  end
-
   def create
     @setting = Setting.new params[:setting]
 
     if @setting.save
-      flash[:success] = t 'messages.created_successfully'
-      redirect_to dashboard_settings_path
+      redirect_to dashboard_settings_path, flash: { success: t('messages.created_successfully') }
     else
       render :new
     end
   end
 
   def update
-    params[:setting] = params[:setting].except(:name) if !@setting.destroyable?
-
     if @setting.update_attributes params[:setting]
-      flash[:success] = t 'messages.updated_successfully'
-      redirect_to dashboard_settings_path
+      redirect_to dashboard_settings_path, flash: { success: t('messages.updated_successfully') }
     else
       render :edit
     end
   end
 
   def destroy
-    if @setting.delete
-      flash[:success] = t 'messages.deleted_successfully'
-      redirect_to dashboard_settings_path
+    if @setting.destroyable? and @setting.destroy
+      redirect_to dashboard_settings_path, flash: { success: t('messages.deleted_successfully') }
     else
-      flash[:error] = t 'messages.failed_miserably'
-      redirect_to dashboard_settings_path
+      redirect_to dashboard_settings_path, flash: { error: t('messages.failed_miserably') }
     end
   end
 
   private
-  def get_themes
-    themes_path = File.join Rails.root, 'app', 'views', 'layouts', 'themes'
-
-    Dir.new(themes_path).select do |dir|
-      dir =~ /^[a-z0-9_-]+$/i && File.directory?( File.join themes_path, dir )
-    end
-  end
-
-  def set_setting
-    @setting ||= Setting.find params[:id]
+  def find_setting
+    @setting  = Setting.find params[:id]
+    @themes   = $themes
   end
 end

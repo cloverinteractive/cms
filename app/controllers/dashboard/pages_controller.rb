@@ -1,5 +1,5 @@
 class Dashboard::PagesController < ApplicationController
-  before_filter :set_page, only: [ :edit, :update, :destroy ]
+  before_filter :find_page, only: [ :edit, :update, :destroy ]
 
   set_tab :list_pages,  only: :index
   set_tab :new_page,    only: :new
@@ -16,8 +16,7 @@ class Dashboard::PagesController < ApplicationController
     @page = Page.new params[:page]
 
     if @page.save
-      flash[:success] = t 'messages.created_successfully'
-      redirect_to dashboard_pages_path
+      redirect_to dashboard_pages_path, flash: { success: t('messages.created_successfully')  }
     else
       render :new
     end
@@ -25,8 +24,7 @@ class Dashboard::PagesController < ApplicationController
 
   def update
     if @page.update_attributes params[:page]
-      flash[:success] = t 'messages.updated_successfully'
-      redirect_to edit_dashboard_page_path( @page )
+      redirect_to edit_dashboard_page_path( @page ), flash: { success: t('messages.updated_successfully') }
     else
       render :edit
     end
@@ -38,7 +36,7 @@ class Dashboard::PagesController < ApplicationController
   end
 
   private
-  def set_page
-    @page ||= Page.find params[:id]
+  def find_page
+    @page = Page.find params[:id]
   end
 end
