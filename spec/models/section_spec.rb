@@ -20,4 +20,23 @@ describe Section do
   it "should have an slug after created" do
     section.slug.should be_present
   end
+
+  describe :section_collection do
+    before { section.should be_persisted }
+
+    context :new_record do
+      it 'should show fetch all sections' do
+        new_section = build :section
+        new_section.section_collection.should include( [ section.name, section.id ] )
+        new_section.section_collection.should eql( Section.section_collection )
+      end
+    end
+
+    context :exting_record do
+      it 'should not fetch self' do
+        section.section_collection.should_not include( [ section.name, section.id ] )
+        section.section_collection.should eql( [] )
+      end
+    end
+  end
 end

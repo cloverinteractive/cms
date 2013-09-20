@@ -8,7 +8,7 @@
       = t 'activerecord.attributes.page.section'
       %small= t 'dashboard.page.descriptions.section'
 
-    = f.select  :section_id, all_sections_collection
+    = f.select  :section_id, Section.section_collection
 
     .buttonset
       = f.input :home_page,   input_html: { class: :home_page }

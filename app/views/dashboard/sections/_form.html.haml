@@ -9,7 +9,7 @@
       %label{ for: :main_section_id }
         = t 'activerecord.attributes.section.main_section'
         %small= t 'dashboard.sections.descriptions.main_section'
-      = f.select :main_section_id, main_sections_collection( section.name ), include_blank: true
+      = f.select :main_section_id, section.section_collection, include_blank: true
 
       %button#submit= t 'common.forms.submit'
 
