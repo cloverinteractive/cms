@@ -1,18 +1,19 @@
 class PagesController < ApplicationController
   skip_before_filter  :authenticate_user!
-  after_filter        :raise_if_page_not_found!
 
   # GET /:section/:page
   # GET /:section/:subsection/:page
   def show
-    @section  = Section.find params[:section]
-    @page     = @section.pages.published.find( params[:page] ) if @section
+    @section, @subsection, @page = *Section.with_children( params )
+    raise_if_page_not_found!
   end
 
   #GET /
   def home
     @page     = Page.published.home_page
     @section  = @page.section
+
+    raise_if_page_not_found!
 
     render :show
   end
