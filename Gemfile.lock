@@ -41,7 +41,7 @@ GEM
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
       will_paginate
-    bootstrap_pagedown (1.0.2)
+    bootstrap_pagedown (1.1.0)
       rails (>= 3.2)
     builder (3.0.4)
     bullet (4.1.5)
@@ -140,7 +140,7 @@ GEM
       actionmailer (~> 3.0)
     method_source (0.8)
     mime-types (1.25)
-    multi_json (1.8.0)
+    multi_json (1.8.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
